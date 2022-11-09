@@ -10,7 +10,7 @@ if (isset($_POST['timkiem2'])) {
     $tukhoa = $_POST['tukhoa2'];
 }
 $sql_pro = "SELECT * FROM lienhe
-    WHERE  lienhe.ten LIKE '%" . $tukhoa . "%' ";
+    WHERE  lienhe.ten LIKE '%" . $tukhoa . "%' or lienhe.email LIKE '%" . $tukhoa . "%'   ";
 $query_pro = mysqli_query($mysqli, $sql_pro);
 
 ?>
