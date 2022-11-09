@@ -36,11 +36,9 @@ if (!isset($_SESSION['dangnhap1'])) {
 
   <!-- CSS Files -->
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 
   <link id="pagestyle" href="./assets/css/material-dashboard.css?v=3.0.4" rel="stylesheet" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
 
 
@@ -48,15 +46,6 @@ if (!isset($_SESSION['dangnhap1'])) {
 
 </head>
 
-<style>
-  .material-symbols-outlined {
-    font-variation-settings:
-      'FILL'0,
-      'wght'400,
-      'GRAD'0,
-      'opsz'48
-  }
-</style>
 
 <body class="g-sidenav-show  bg-gray-100">
 
@@ -70,7 +59,7 @@ if (!isset($_SESSION['dangnhap1'])) {
       <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
       <a class="navbar-brand m-0" href="index.php?action=trangchu&query=them" target="_blank">
 
-        <span class="ms-1 font-weight-bold text-white">Tuyết Ngân Cake</span>
+        <span class="ms-1 font-weight-bold text-white">Girl Friend</span>
       </a>
     </div>
 
@@ -91,9 +80,10 @@ if (!isset($_SESSION['dangnhap1'])) {
         <li class="nav-item">
           <a class="nav-link text-white " href="index.php?action=trangchu&query=them">
 
-            <span class="material-symbols-outlined">
-              home
-            </span>
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">dashboard</i>
+            </div>
+
             <span class="nav-link-text ms-1">Trang Chủ</span>
           </a>
         </li>
@@ -102,9 +92,9 @@ if (!isset($_SESSION['dangnhap1'])) {
         <li class="nav-item">
           <a class="nav-link text-white " href="index.php?action=danhmucsanpham&query=them">
 
-            <span class="material-symbols-outlined">
-              inventory_2
-            </span>
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">table_view</i>
+            </div>
 
             <span class="nav-link-text ms-1">Danh mục sản phẩm</span>
           </a>
@@ -126,36 +116,36 @@ if (!isset($_SESSION['dangnhap1'])) {
         <li class="nav-item">
           <a class="nav-link text-white " href="index.php?action=khach_hang&query=them">
 
-            <span class="material-symbols-outlined">
-              person
-            </span>
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">view_in_ar</i>
+            </div>
 
             <span class="nav-link-text ms-1">Người Dùng</span>
           </a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link text-white " href="index.php?action=binhluan&query=them">
 
-            <span class="material-symbols-outlined">
-              mode_comment
-            </span>
-
-            <span class="nav-link-text ms-1">Bình Luận</span>
-          </a>
-        </li>
         <li class="nav-item">
           <a class="nav-link text-white " href="index.php?action=donhang&query=them">
 
-            <span class="material-symbols-outlined">
-              create_new_folder
-            </span>
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">format_textdirection_r_to_l</i>
+            </div>
 
             <span class="nav-link-text ms-1">Đơn Hàng</span>
           </a>
         </li>
 
+        <li class="nav-item">
+          <a class="nav-link text-white " href="index.php?action=lienhe&query=them">
 
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">table_view</i>
+            </div>
+
+            <span class="nav-link-text ms-1">Liên Hệ</span>
+          </a>
+        </li>
 
 
         <li class="nav-item mt-3">
@@ -216,11 +206,20 @@ if (!isset($_SESSION['dangnhap1'])) {
 
       //nguoidung
     } else if ($tam == "khach_hang" && $query == 'them') {
-
+      
       include("quanly/quanlytrangweb/nguoidung_lietke.php");
     } else if ($tam == "khach_hang" && $query == 'sua') {
       include("quanly/quanlytrangweb/nguoidung_sua.php");
       include("quanly/quanlytrangweb/nguoidung_lietke.php");
+
+    //lien he
+    }else if ($tam == "lienhe" && $query == 'them') {
+      include("quanly/quanlytrangweb/lienhe_them.php");
+      include("quanly/quanlytrangweb/lienhe_lietke.php");
+    } else if ($tam == 'timkiem2' && $query == 'them') {
+      include("quanly/quanlytrangweb/lienhe_them.php");
+      include("quanly/quanlytrangweb/lienhe_timkiem.php");
+
     } else if ($tam == 'timkiem2' && $query == 'them') {
       include("quanly/quanlytrangweb/nguoidung_them.php");
       include("quanly/quanlytrangweb/nguoidung_timkiem.php");
@@ -236,8 +235,6 @@ if (!isset($_SESSION['dangnhap1'])) {
       include("quanly/quanlytrangweb/danhmuc_timkiem.php");
     } else if ($tam == 'timkiem1' && $query == 'sua') {
       include("quanly/quanlytrangweb/danhmuc_sua.php");
-    }else if($tam == 'binhluan' && $query == 'them'){
-      include("quanly/quanlytrangweb/binhluan_lietke.php");
     }
 
     ?>

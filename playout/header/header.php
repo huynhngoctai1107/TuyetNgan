@@ -91,6 +91,7 @@ if (!isset($_SESSION['dangnhap'])) {
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
                             <li><a href="index.php?id= " class="active">Trang Chủ</a></li>
+                            <li><a href="gioithieu.php?id= " class="active">Giới thiệu</a></li>
                             <li class="dropdown"><a href="./shop.php">Sản Phẩm<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
                                     <!-- sản phẩm từ dastabase -->

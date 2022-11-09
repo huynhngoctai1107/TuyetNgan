@@ -15,19 +15,19 @@
                 <div class="contact-form">
                     <h2 class="title text-center">Liên Hệ</h2>
                     <div class="status alert alert-success" style="display: none"></div>
-                    <form id="main-contact-form" class="contact-form row" name="contact-form" method="post">
+                    <form action="./admin/quanly/quanlytrangweb/lienhe_xuli.php" method="post">
                         <div class="form-group col-md-6">
-                            <input type="text" name="name" class="form-control" required="required" placeholder="Tên">
+                            <input type="text" name="ten" class="form-control" required="required" placeholder="Tên">
                         </div>
                         <div class="form-group col-md-6">
                             <input type="email" name="email" class="form-control" required="required" placeholder="Email">
                         </div>
                          
                         <div class="form-group col-md-12">
-                            <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Nội dung của bạn tại đây"></textarea>
+                            <textarea name="noidung" id="message" required="required" class="form-control" rows="8" placeholder="Nội dung của bạn tại đây"></textarea>
                         </div>
                         <div class="form-group col-md-12">
-                            <input type="submit" name="submit" class="btn btn-primary pull-right" value="Gửi">
+                            <input type="submit" name="gui" class="btn btn-primary pull-right" value="Gửi">
                         </div>
                     </form>
                 </div>
