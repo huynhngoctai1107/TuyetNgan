@@ -26,7 +26,7 @@
             <div class="timkiem">
 
                 <form class="timkiem1" action="index.php?action=timkiem2&query=them" method="POST">
-                    <input style="border-radius: 20px 0px 0px 20px ; border:none ;height: 50px; padding-left: 10px ;" type="text" name="tukhoa2" placeholder="Tìm kiếm sản phẩm">
+                    <input style="border-radius: 20px 0px 0px 20px ; border:none ;height: 50px; padding-left: 10px ;" type="text" name="tukhoa2" placeholder="Tìm kiếm liên hệ">
                     <input style="border-radius: 0px 20px 20px 0px ; border:none ;height: 50px; background-color:whitesmoke ; color: black; " type="submit" value="tìm kiếm" name="timkiem2">
                 </form>
 
