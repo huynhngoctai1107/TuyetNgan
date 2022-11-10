@@ -50,7 +50,7 @@ if (!isset($_SESSION['dangnhap'])) {
     <div class="header-middle">
         <!--header-middle-->
         <div class="container">
-            <div class="row">
+            <div class="row" style="display: flex !important;  ">
                 <div class="col-sm-4">
                     <div class="logo pull-left">
                         <a href="./index.php?id="><img src="images/logo.png" alt="" /></a>
@@ -59,7 +59,7 @@ if (!isset($_SESSION['dangnhap'])) {
                 </div>
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
-                        <ul class="nav navbar-nav" id="an">
+                        <ul class="nav navbar-nav" id="an"  >
                             <li><a href="./acout.php"><i class="fa fa-user"></i> Tài Khoản</a></li>
 
 

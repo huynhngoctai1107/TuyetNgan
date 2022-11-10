@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['dangnhap'])) {
-  header('Location: login.php');
+	header('Location: login.php');
 }
 ?>
 
@@ -37,6 +37,8 @@ if (!isset($_SESSION['dangnhap'])) {
 
 
 	<?php
+	include("admin/config/config.php");
+
 	include("./playout/header/header.php");
 	require("./playout/main/cart.php");
 	require("./playout/footer/footer.php");

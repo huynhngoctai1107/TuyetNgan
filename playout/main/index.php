@@ -38,16 +38,16 @@ q<section>
                     <?php
                     while ($row_sanpham = mysqli_fetch_array($query_sanpham)) {
                     ?>
-                        <form class="col-sm-4">
-                            <a href="./chitiet.php?id=<?php echo $row_sanpham['ma_hh'] ?>" class="product-image-wrapper">
+                        <form class="col-sm-4" action="playout/main/giohang/giohang_xuli.php?id=<?php echo $row_sanpham['ma_hh'] ?>" method="post">
+                            <a href="./chitiet.php?id=<?php echo $row_sanpham['ma_hh'] ?>" class="product-image-wrapper"> 
                                 <div class="single-products">
                                     <div class="productinfo text-center">
 
                                         <img src="./images/<?php echo $row_sanpham['hinh'] ?>" width="100%" height="200" alt="" />
                                         <h1 style="color: #696763; font: 25px;"><?php echo $row_sanpham['ten_hh'] ?> </h1>
-                                        <h2><?php echo $row_sanpham['don_gia'] ?> <sup>đ</sup></h2>
+                                        <h2><?php echo number_format($row_sanpham['don_gia']) ?> <sup>đ</sup></h2>
                                         <p>Tiệm bánh Tuyết Ngân</p>
-                                        <input type="hidden" value="<?php echo $row_sanpham['ma_hh'] ?>">
+                                        <input type="hidden" value="<?php echo $row_sanpham['ma_hh'] ?>" name="ma_hh">
                             </a>
                             <button type="submit" name="themgiohang" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
                 </div>
