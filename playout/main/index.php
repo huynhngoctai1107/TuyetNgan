@@ -92,7 +92,7 @@ q<section>
 
                     <?php
                     while ($row_seo = mysqli_fetch_array($query_seo)) {
-                    ?> <form class="col-sm-4" style="float: left !important;">
+                    ?> <form class="col-sm-4" action="playout/main/giohang/giohang_xuli.php?id=<?php echo $row_seo['ma_hh'] ?>" method="post" style="float: left !important;">
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     <div class="productinfo text-center">
