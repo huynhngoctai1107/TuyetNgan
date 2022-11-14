@@ -15,7 +15,7 @@
  		<tbody>
 
  			<?php
-                     include_once("./dao/pdo.php");
+            	include_once("./dao/pdo.php");
 
 				$cookie_data = $_COOKIE['cart'];
 				$cart_data = json_decode($cookie_data, true);

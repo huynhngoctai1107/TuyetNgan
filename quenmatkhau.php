@@ -1,6 +1,4 @@
-<?php
-    session_start();
-?>
+ 
 
 
 
@@ -34,7 +32,6 @@
 	 
 <?php
     include("./playout/header/header.php");
-     
     require("./playout/main/quenmatkhau.php");
     require("./playout/footer/footer.php");
      ?>

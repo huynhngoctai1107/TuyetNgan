@@ -39,7 +39,7 @@ $query_accout = mysqli_query($mysqli, $sql_accout);
             <p onclick="doiten()">Đổi tên tài khoản</p>
             <p onclick="doimk()">Đổi mật khẩu</p>
             <p onclick="donhang()">Lịch sử đơn hàng</p>
-            <a href="./dao/taikhoan_xuli.php?id=<?php echo $row_accout['ma_kh'] ?>" style="color: black;">Đăng xuất tài khoản</a>
+            <a href="./admin/quanly/index/dangxuat.php" style="color: black;">Đăng xuất tài khoản</a>
 
 
         </div>

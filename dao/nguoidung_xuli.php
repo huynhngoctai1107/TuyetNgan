@@ -25,3 +25,4 @@ if (isset($_POST['gui'])) {
     mysqli_query($mysqli, $sql_xoasp);
     header('Location: ../admin/index.php?action=khach_hang&query=them');
 }
+?>

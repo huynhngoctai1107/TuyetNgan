@@ -59,10 +59,10 @@
                     </div>
 
                     <div class="text-center p-t-90">
-                        <a class="txt1" href="../Eshopper/quenmatkhau.php">
+                        <a class="txt1" href="./quenmatkhau.php">
 							Quên mật khẩu?
 						</a>
-                        <a class="txt1" href="../Eshopper/dangky.php">
+                        <a class="txt1" href="./dangky.php">
 							&nbsp;&nbsp;&nbsp;Đăng ký?
 						</a>
                     </div>
