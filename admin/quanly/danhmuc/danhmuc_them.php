@@ -37,11 +37,8 @@
         </div>
         <div class="nut1" onclick="hinh13()" id="chu">Thêm</div>
     </div>
-    <form id="chinhsua" action="quanly/quanlytrangweb/danhmuc_xuli.php" method="POST" style="width:100% ; height: 100%;">
-    <p>
-           Mã danh mục
-            <input type="text" name="id" id="" required>
-        </p>
+    <form id="chinhsua" action=".././dao/danhmuc_xuli.php" method="POST" style="width:100% ; height: 100%;">
+ 
         <p>
             Tên danh mục
             <input type="text" name="tendanhmuc" id="" required>
