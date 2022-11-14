@@ -1,9 +1,9 @@
 <?php
 session_start();
-include ('admin/config/config.php');
+include ('.././dao/pdo.php');
 session_unset();
 session_destroy();
 
-header('location: ../../index.php');
+header('location: ../../../index.php');
 
 ?>

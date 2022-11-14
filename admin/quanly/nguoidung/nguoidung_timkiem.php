@@ -37,7 +37,7 @@ $query_pro = mysqli_query($mysqli, $sql_pro);
                 <td> <?php echo $danhmuc['email'] ?> </td>
                 <td> <img src="../images/<?php echo $danhmuc['hinh'] ?> " width="200" alt=""> </td>
                 <td>
-                    <a href="../admin/quanly/quanlytrangweb/nguoidung_xuli.php?ma_kh= <?= $danhmuc['ma_kh'] ?>"><img class="xoa" src="./img/clear.png" alt=""></a> 
+                    <a href=".././dao/nguoidung_xuli.php?ma_kh= <?= $danhmuc['ma_kh'] ?>"><img class="xoa" src="./img/clear.png" alt=""></a> 
                   
                 </td>
 

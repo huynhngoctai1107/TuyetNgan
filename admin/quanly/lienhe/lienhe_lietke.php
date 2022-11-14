@@ -43,7 +43,7 @@ $num_danhmuc = $count_danhmuc['num_danhmuc'];
                 <td> <?php echo $danhmuc['email'] ?> </td>
                 <td> <?php echo $danhmuc['noidung'] ?> </td>
                 <td>
-                    <a href="/dao/lienhe_xuli.php?idlienhe= <?= $danhmuc['id_lienhe'] ?>"><img class="xoa" src="./img/clear.png" alt=""></a> 
+                    <a href=".././dao/lienhe_xuli.php?idlienhe= <?= $danhmuc['id_lienhe'] ?>"><img class="xoa" src="./img/clear.png" alt=""></a> 
                   
                 </td>
 

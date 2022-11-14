@@ -1,6 +1,6 @@
 <?php
  
-include("dao/pdo.php");
+include("pdo.php");
 $sql_accout = "SELECT * FROM khach_hang where  ma_kh = '$_GET[id]'  ";
 $query_accout = mysqli_query($mysqli, $sql_accout);
 ?>
@@ -40,21 +40,21 @@ while ($row_accout = mysqli_fetch_array($query_accout)) {
                 session_start();
                 session_unset();
                 session_destroy();
-                header('Location: login.php');
+                header('Location: .login.php');
             } else {
 
 
-                header('Location: acout.php');
+                header('Location: .acout.php');
             }
         } else {
-            header('Location: acout.php');
+            header('Location: .acout.php');
         
         }
     }else{
         session_start();
         session_unset();
         session_destroy();
-        header('Location: login.php');
+        header('Location: .login.php');
     }
 ?>
 

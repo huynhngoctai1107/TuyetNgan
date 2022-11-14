@@ -2,7 +2,7 @@
 
 //Phân trang
 
-include("./dao/pdo.php");
+include(".././dao/pdo.php");
 
 $limit = 10;
 
@@ -33,7 +33,7 @@ $num_danhmuc = $count_danhmuc['num_danhmuc'];
         <th>Ngày nhập</th>
         <th>số lượt xem </th>
         <th>Đặc biệt</th>
-      
+
 
         <th>Mô tả </th>
         <th>Tên loại sản phẩm </th>
@@ -46,20 +46,19 @@ $num_danhmuc = $count_danhmuc['num_danhmuc'];
         while ($danhmuc = $danhmucs->fetch_assoc()) :
 
 
-            $sale ="" ;
-            if($danhmuc['dac_biet'] ==1){
-                $sale= "Hàng SEO"; 
-            }
-            else{
-                $sale="Hàng không SEO" ;
+            $sale = "";
+            if ($danhmuc['dac_biet'] == 1) {
+                $sale = "Hàng SEO";
+            } else {
+                $sale = "Hàng không SEO";
             }
 
     ?>
             <tr>
                 <td> <?php echo $danhmuc['ma_hh'] ?> </td>
                 <td> <?php echo $danhmuc['ten_hh'] ?> </td>
-                <td> <img width="300" src="../images/<?php echo $danhmuc['hinh'] ?> " alt="">  </td>
-                <td> <?php echo number_format( $danhmuc['don_gia']) ?> </td>
+                <td> <img width="300" src="../images/<?php echo $danhmuc['hinh'] ?> " alt=""> </td>
+                <td> <?php echo number_format($danhmuc['don_gia']) ?> </td>
                 <td> <?php echo $danhmuc['giam_gia'] ?> </td>
                 <td> <?php echo $danhmuc['ngay_nhap'] ?> </td>
                 <td> <?php echo $danhmuc['so_luot_xem'] ?> </td>
@@ -67,7 +66,7 @@ $num_danhmuc = $count_danhmuc['num_danhmuc'];
                 <td> <?php echo $danhmuc['mo_ta'] ?> </td>
                 <td> <?php echo $danhmuc['ten_loai'] ?> </td>
                 <td>
-                    <a href="dao/sanpham_xuli.php?maloai= <?= $danhmuc['ma_hh'] ?>"><img class="xoa" src="./img/clear.png" alt=""></a> |
+                    <a href=".././dao/sanpham_xuli.php?maloai= <?= $danhmuc['ma_hh'] ?>"><img class="xoa" src="./img/clear.png" alt=""></a> |
                     <a href="?action=sanpham&query=sua&maloai=<?= $danhmuc['ma_hh'] ?>"><img class="xoa" src="./img/pencil.png" alt=""></a>
 
                 </td>
@@ -90,7 +89,7 @@ $num_danhmuc = $count_danhmuc['num_danhmuc'];
     for ($i = 1; $i <= ceil((int) $num_danhmuc / $limit); $i++) :
 
     ?>
-        <li class="page-item"><a class="page-link" href="index.php?action=sanpham&query=them&page=<?= $i ?>"><?= $i ?></a></li>
+        <li class="page-item"><a class="page-link" href="./index.php?action=sanpham&query=them&page=<?= $i ?>"><?= $i ?></a></li>
     <?php
     endfor;
     ?>

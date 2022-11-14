@@ -11,7 +11,7 @@ if (!isset($_SESSION['dangnhap'])) {
 
 // thêm vào giỏ hàng 
 if (isset($_POST['themgiohang'])) {
-    include("dao/pdo.php");
+    include("pdo.php");
 
     $id_sp = isset($_GET['id']) ? $_GET['id'] : '';
     $sanpham = $mysqli->query("SELECT * FROM hang_hoa where  ma_hh = $id_sp ");
@@ -60,7 +60,7 @@ if (isset($_POST['themgiohang'])) {
     setcookie('cart', $product_data, time() +  3600 * 24 * 30 * 12,'/');
 
 
-     header('location: ../../../cart.php');
+     header('location: ./cart.php');
 }
 
 // sửa số lượng sản phẩm trong giỏ hàng 
@@ -101,7 +101,7 @@ if (isset($_POST['sua'])) {
     
     setcookie('cart', $product_data, time() + 3600 * 24 * 30 * 12,'/');
 
-    header('location: ../../../cart.php');
+    header('location: ./cart.php');
 }
 
 // xóa sản phẩm trong giỏ hàng 
@@ -118,7 +118,7 @@ if (isset($_COOKIE['cart'])) {
             }
         }
     }
-    header('location: ../../../cart.php');
+    header('location: ./cart.php');
 }
 
 // xóa cookie giỏ hàng
@@ -126,5 +126,5 @@ if (isset($_POST['xoatatca'])) {
     if (isset($_COOKIE['cart'])) {
         setcookie("cart", "", time() -  3600 * 24 * 30 * 12,'/');
     }
-    header('location: ../../../cart.php');
+    header('location: ./cart.php');
 }

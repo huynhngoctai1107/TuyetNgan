@@ -36,7 +36,7 @@ $query_pro = mysqli_query($mysqli, $sql_pro);
             <td> <?php echo $danhmuc['noidung'] ?> </td>
 
             <td>
-                <a href="quanly/quanlytrangweb/lienhe_xuli.php?idlienhe= <?= $danhmuc['id_lienhe'] ?>"><img class="xoa" src="./img/clear.png" alt=""></a> |
+                <a href=".././dao/lienhe_xuli.php?idlienhe= <?= $danhmuc['id_lienhe'] ?>"><img class="xoa" src="./img/clear.png" alt=""></a> |
 
 
             </td>

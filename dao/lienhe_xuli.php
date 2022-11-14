@@ -20,5 +20,5 @@ if (isset($_POST['gui'])) {
     $id = $_GET['idlienhe'];
     $sql_xoasp = "DELETE FROM  lienhe WHERE id_lienhe ='" . $id . "'  ";
     mysqli_query($mysqli, $sql_xoasp);
-    header('Location: ../../index.php?action=lienhe&query=them');
+    header('Location: ../admin/index.php?action=lienhe&query=them');
 }

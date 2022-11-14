@@ -8,7 +8,7 @@ $query_sua_danhmucsp = mysqli_query($mysqli, $sql_sua_danhmucsp);
     while ($dong = mysqli_fetch_array($query_sua_danhmucsp)) {
 
     ?>
-        <form class="cs" method="post" action="quanly/quanlytrangweb/nguoidung_xuli.php?makh=<?php echo $_GET['makh'] ?>">
+        <form class="cs" method="post" action=".././dao/nguoidung_xuli.php?makh=<?php echo $_GET['makh'] ?>">
 
             <div class="chinhsua">
                 <h1 style="text-align: center;">Chỉnh Sửa</h1>

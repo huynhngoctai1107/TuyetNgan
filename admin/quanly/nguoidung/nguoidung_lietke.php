@@ -2,7 +2,7 @@
 
 //Phân trang
 
-include("./dao/pdo.php");
+include(".././dao/pdo.php");
 
 $limit = 6;
 
@@ -66,7 +66,7 @@ $num_danhmuc = $count_danhmuc['num_danhmuc'];
                 <td style="color: green ;"><?php echo $hoatdong ?> </td>
                 <td style="color: red ;"><?php echo $quyen ?> </td>
                 <td>
-                    <a href=/dao/nguoidung_xuli.php?makh=<?= $danhmuc['ma_kh'] ?>"><img class="xoa" src="./img/clear.png" alt=""></a>|
+                    <a href=.././dao/nguoidung_xuli.php?makh=<?= $danhmuc['ma_kh'] ?>"><img class="xoa" src="./img/clear.png" alt=""></a>|
                     <a href="?action=khach_hang&query=sua&makh=<?= $danhmuc['ma_kh'] ?>"><img class="xoa" src="./img/pencil.png" alt=""></a>
                 </td>
 
@@ -88,7 +88,7 @@ $num_danhmuc = $count_danhmuc['num_danhmuc'];
     for ($i = 1; $i <= ceil((int) $num_danhmuc / $limit); $i++) :
 
     ?>
-                <li class="page-item"><a class="page-link" href="index.php?action=khach_hang&query=them&page=<?= $i ?>"><?= $i ?></a></li>
+                <li class="page-item"><a class="page-link" href="./index.php?action=khach_hang&query=them&page=<?= $i ?>"><?= $i ?></a></li>
     <?php
     endfor;
     ?>

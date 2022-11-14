@@ -33,7 +33,7 @@
             </div>
           
         </div>
-        <form id="chinhsua" action="../admin/playout/quanly/quanlytrangweb/lienhe_xuli.php" method="POST" style="width:100% ; height: 100%;">
+        <form id="chinhsua" action=".././dao/lienhe_xuli.php" method="POST" style="width:100% ; height: 100%;">
             
             <p>
                 Người liên hệ

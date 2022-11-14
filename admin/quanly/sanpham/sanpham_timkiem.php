@@ -54,7 +54,7 @@ $query_pro = mysqli_query($mysqli, $sql_pro);
             <td> <?php echo $danhmuc['mo_ta'] ?> </td>
             <td> <?php echo $danhmuc['ten_loai'] ?> </td>
             <td>
-                <a href="quanly/quanlytrangweb/sanpham_xuli.php?maloai= <?= $danhmuc['ma_hh'] ?>"><img class="xoa" src="./img/clear.png" alt=""></a> |
+                <a href=".././dao/sanpham_xuli.php?maloai= <?= $danhmuc['ma_hh'] ?>"><img class="xoa" src="./img/clear.png" alt=""></a> |
                 <a href="?action=sanpham&query=sua&maloai= <?= $danhmuc['ma_hh'] ?>"><img class="xoa" src="./img/pencil.png" alt=""></a>
 
             </td>

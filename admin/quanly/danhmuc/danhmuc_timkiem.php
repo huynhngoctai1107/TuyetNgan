@@ -28,7 +28,7 @@ $query_pro = mysqli_query($mysqli, $sql_pro);
                 <td> <?php echo $danhmuc['ma_loai'] ?> </td>
                 <td> <?php echo $danhmuc['ten_loai'] ?> </td>
                 <td>
-                <a href="quanly/quanlytrangweb/danhmuc_xuli.php?maloai= <?= $danhmuc['ma_loai'] ?>"><img class="xoa" src="./img/clear.png" alt=""></a> |
+                <a href=".././dao/danhmuc_xuli.php?maloai= <?= $danhmuc['ma_loai'] ?>"><img class="xoa" src="./img/clear.png" alt=""></a> |
                     <a href="?action=danhmucsanpham&query=sua&maloai= <?= $danhmuc['ma_loai'] ?>"><img class="xoa" src="./img/pencil.png" alt=""></a>
 
                 </td>

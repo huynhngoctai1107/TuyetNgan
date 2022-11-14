@@ -49,7 +49,6 @@
 
       // danh muc
     } else if ($tam == 'timkiem1' && $query == 'them') {
-
       include("quanly/danhmuc/danhmuc_timkiem.php");
     } else if ($tam == 'timkiem1' && $query == 'sua') {
       include("quanly/danhmuc/danhmuc_sua.php");
