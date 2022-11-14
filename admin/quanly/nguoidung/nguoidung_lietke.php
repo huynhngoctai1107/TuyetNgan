@@ -2,7 +2,7 @@
 
 //Phân trang
 
-$mysqli = new mysqli("localhost", "root", "", "du_an_mau");
+include("./dao/pdo.php");
 
 $limit = 6;
 
@@ -66,7 +66,7 @@ $num_danhmuc = $count_danhmuc['num_danhmuc'];
                 <td style="color: green ;"><?php echo $hoatdong ?> </td>
                 <td style="color: red ;"><?php echo $quyen ?> </td>
                 <td>
-                    <a href="../admin/quanly/quanlytrangweb/nguoidung_xuli.php?makh=<?= $danhmuc['ma_kh'] ?>"><img class="xoa" src="./img/clear.png" alt=""></a>|
+                    <a href=/dao/nguoidung_xuli.php?makh=<?= $danhmuc['ma_kh'] ?>"><img class="xoa" src="./img/clear.png" alt=""></a>|
                     <a href="?action=khach_hang&query=sua&makh=<?= $danhmuc['ma_kh'] ?>"><img class="xoa" src="./img/pencil.png" alt=""></a>
                 </td>
 

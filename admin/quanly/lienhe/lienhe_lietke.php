@@ -2,7 +2,7 @@
 
 //Phân trang
 
-$mysqli = new mysqli("localhost", "root", "", "du_an_mau");
+include("./dao/pdo.php");
 
 $limit = 3;
 
@@ -43,7 +43,7 @@ $num_danhmuc = $count_danhmuc['num_danhmuc'];
                 <td> <?php echo $danhmuc['email'] ?> </td>
                 <td> <?php echo $danhmuc['noidung'] ?> </td>
                 <td>
-                    <a href="../admin/quanly/quanlytrangweb/lienhe_xuli.php?idlienhe= <?= $danhmuc['id_lienhe'] ?>"><img class="xoa" src="./img/clear.png" alt=""></a> 
+                    <a href="/dao/lienhe_xuli.php?idlienhe= <?= $danhmuc['id_lienhe'] ?>"><img class="xoa" src="./img/clear.png" alt=""></a> 
                   
                 </td>
 
