@@ -1,4 +1,4 @@
-q<section>
+<section>
     <div class="container">
 
 
@@ -12,19 +12,18 @@ q<section>
 
 
                     <?php
-                    $mysqli = new mysqli("localhost", "root", "", "du_an_mau");
+                    include_once("./dao/pdo.php");
                     if (isset($_GET['id'])) {
                         $tam = $_GET['id'];
                     } else {
                         $tam = '';
                     }
-
                     if ($tam == '') {
-                        $mysqli = new mysqli("localhost", "root", "", "du_an_mau");
+
                         $sql_sanpham = "SELECT * FROM hang_hoa where dac_biet = 2 ";
                         $query_sanpham = mysqli_query($mysqli, $sql_sanpham);
                     } else {
-                        $mysqli = new mysqli("localhost", "root", "", "du_an_mau");
+
                         $sql_sanpham = "SELECT * FROM hang_hoa,loai 
                            WHERE  hang_hoa.ma_loai= loai.ma_loai AND hang_hoa.ma_loai = '$_GET[id]'
                          ORDER BY hang_hoa.ma_hh ASC";
@@ -38,8 +37,8 @@ q<section>
                     <?php
                     while ($row_sanpham = mysqli_fetch_array($query_sanpham)) {
                     ?>
-                        <form class="col-sm-4" action="playout/main/giohang/giohang_xuli.php?id=<?php echo $row_sanpham['ma_hh'] ?>" method="post">
-                            <a href="./chitiet.php?id=<?php echo $row_sanpham['ma_hh'] ?>" class="product-image-wrapper"> 
+                        <form class="col-sm-4" action="dao/giohang_xuli.php?id=<?php echo $row_sanpham['ma_hh'] ?>" method="post">
+                            <a href="./chitiet.php?id=<?php echo $row_sanpham['ma_hh'] ?>" class="product-image-wrapper">
                                 <div class="single-products">
                                     <div class="productinfo text-center">
 
@@ -76,7 +75,7 @@ q<section>
 
             <?php
 
-            $mysqli = new mysqli("localhost", "root", "", "du_an_mau");
+      
             $sql_seo = "SELECT * FROM loai,hang_hoa where loai.ma_loai = hang_hoa.ma_loai and dac_biet=1 ORDER BY  ma_hh ASC  ";
             $query_seo = mysqli_query($mysqli, $sql_seo);
 
@@ -92,7 +91,7 @@ q<section>
 
                     <?php
                     while ($row_seo = mysqli_fetch_array($query_seo)) {
-                    ?> <form class="col-sm-4" action="playout/main/giohang/giohang_xuli.php?id=<?php echo $row_seo['ma_hh'] ?>" method="post" style="float: left !important;">
+                    ?> <form class="col-sm-4" action="dao/giohang_xuli.php?id=<?php echo $row_seo['ma_hh'] ?>" method="post" style="float: left !important;">
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     <div class="productinfo text-center">
@@ -131,7 +130,7 @@ q<section>
 
 
     <?php
-    $mysqli = new mysqli("localhost", "root", "", "du_an_mau");
+  
     $sql_danhmuc = "SELECT * FROM loai ORDER BY  ma_loai ASC";
     $query_danhmuc = mysqli_query($mysqli, $sql_danhmuc);
 
@@ -153,14 +152,14 @@ q<section>
                         ?> <h4 class="panel-title" style="width: 100%; height: auto;">
 
                                 <a href="./index.php?id=<?php echo $row_danhmuc['ma_loai'] ?>">
-                                   
+
 
                                     <?php echo $row_danhmuc['ten_loai'] ?></a>
 
 
 
                             </h4> <br><?php
-                                } ?>
+                                    } ?>
                     </div>
 
                 </div>
@@ -177,7 +176,7 @@ q<section>
                 <!--brands_products-->
                 <h2>Danh sách Yêu Thích</h2>
                 <?php
-                $mysqli = new mysqli("localhost", "root", "", "du_an_mau");
+            
                 $sql_sanpham = "SELECT * FROM loai,hang_hoa where loai.ma_loai = hang_hoa.ma_loai and so_luot_xem > 0 ORDER BY so_luot_xem DESC limit 0,10 ";
                 $query_sanpham = mysqli_query($mysqli, $sql_sanpham);
 

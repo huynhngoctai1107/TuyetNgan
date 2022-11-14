@@ -15,7 +15,7 @@
  		<tbody>
 
  			<?php
-				$mysqli = new mysqli("localhost", "root", "", "du_an_mau");
+                     include_once("./dao/pdo.php");
 
 				$cookie_data = $_COOKIE['cart'];
 				$cart_data = json_decode($cookie_data, true);
@@ -35,7 +35,7 @@
  					<td width="200px">
  						<!-- cập nhật số lượng sản phẩm  -->
 
- 						<form action="./playout/main/giohang/giohang_xuli.php" method="post">
+ 						<form action="./dao/giohang_xuli.php" method="post">
  							<input type="number" name="soluong" value="<?= $sp['soluong'] ?>" onchange="this.form.submit()" class="form-control" min=1>
  							<input type="hidden" name="ma_hh" value="<?= $sp['ma_hh'] ?>">
  							<input type="hidden" name="ten_hh" value="<?= $sp['ten_hh'] ?>">
@@ -49,7 +49,7 @@
  					<td style="color: #FE980F;"> <?= number_format($tongtien) ?> đ</td>
  					<td class="text-right">
  						<!-- xóa sản phẩm trong giỏ hàng  -->
- 						<form action="./playout/main/giohang/giohang_xuli.php" method="post">
+ 						<form action="./dao/giohang_xuli.php" method="post">
 
  							<input type="hidden" name="ma_hh" id="" value="<?= $sp['ma_hh'] ?>">
  							<button class="btn btn-outline-danger" name="xoa">Xóa</button>

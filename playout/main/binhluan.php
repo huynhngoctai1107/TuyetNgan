@@ -1,27 +1,26 @@
-
-   <?php
-    $mysqli1 = new mysqli("localhost", "root", "", "du_an_mau");
-    $sql_tk = "SELECT * FROM khach_hang  where khach_hang.email = '".$tk."' ";
-    $query_tk = mysqli_query($mysqli1, $sql_tk);
-    ?>
+<?php
+include("./dao/pdo.php");
+$sql_tk = "SELECT * FROM khach_hang  where khach_hang.email = '" . $tk . "' ";
+$query_tk = mysqli_query($mysqli, $sql_tk);
+?>
 
 <?php
-    while ($row_tk = mysqli_fetch_array($query_tk)) {
-    ?>
+while ($row_tk = mysqli_fetch_array($query_tk)) {
+?>
 
 
 
-<div id="binhluan">
-    <form action="playout/main/binhluan_xuli.php" method="post">
-        <input type="hidden" name="ma_kh" value="<?php echo $row_tk['ma_kh'] ?>">
-        <input type="hidden" name="ma_hh"  value="<?php echo $row_sp['ma_hh'] ?>">
-        <input type="text" name="noidung" required style="height:150px ;" placeholder="Nội dung">
-        <button type="submit" class="button" name="guibinhluan">Gửi Bình Luận</button>
-    </form>
-</div>
+    <div id="binhluan">
+        <form action="dao/binhluan_xuli.php" method="post">
+            <input type="hidden" name="ma_kh" value="<?php echo $row_tk['ma_kh'] ?>">
+            <input type="hidden" name="ma_hh" value="<?php echo $row_sp['ma_hh'] ?>">
+            <input type="text" name="noidung" required style="height:150px ;" placeholder="Nội dung">
+            <button type="submit" class="button" name="guibinhluan">Gửi Bình Luận</button>
+        </form>
+    </div>
 
 <?php }
-    ?>
+?>
 
 
 
@@ -45,11 +44,12 @@
     #binhluan input {
         height: 50px;
     }
+
     p {
         text-align: justify !important;
     }
-    #binhluan input
-  {
+
+    #binhluan input {
         box-shadow: 3px 2px 0.5px black;
         padding-left: 10px;
         border: none;
@@ -123,5 +123,4 @@
         left: -100%;
 
     }
-
 </style>

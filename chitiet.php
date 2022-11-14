@@ -42,7 +42,7 @@ $dangnhap="playout/main/binhluan.php" ;
 <body>
     
     <?php
-     include("admin/config/config.php");
+     include("dao/pdo.php");
     include("./playout/header/header.php");
  
     require("./playout/main/chitiet.php");

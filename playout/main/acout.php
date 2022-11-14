@@ -3,7 +3,7 @@
 
 <?php
 $a  = $_SESSION['dangnhap'];
-$mysqli = new mysqli("localhost", "root", "", "du_an_mau");
+include_once("./dao/pdo.php");
 $sql_accout = "SELECT * FROM khach_hang where  khach_hang.email = '" . $a . "'  ";
 $query_accout = mysqli_query($mysqli, $sql_accout);
 
@@ -39,13 +39,13 @@ $query_accout = mysqli_query($mysqli, $sql_accout);
             <p onclick="doiten()">Đổi tên tài khoản</p>
             <p onclick="doimk()">Đổi mật khẩu</p>
             <p onclick="donhang()">Lịch sử đơn hàng</p>
-            <a href="./taikhoan_xuli.php?id=<?php echo $row_accout['ma_kh'] ?>" style="color: black;">Đăng xuất tài khoản</a>
+            <a href="./dao/taikhoan_xuli.php?id=<?php echo $row_accout['ma_kh'] ?>" style="color: black;">Đăng xuất tài khoản</a>
 
 
         </div>
 
 
-        <form action="./taikhoan_xuli.php?id=<?php echo $row_accout['ma_kh'] ?>" id="doihinh" method="post" class="form">
+        <form action="./dao/taikhoan_xuli.php?id=<?php echo $row_accout['ma_kh'] ?>" id="doihinh" method="post" class="form">
             <h4 style=" margin-left: 80%; background-color: #fe980f; color: white;width: 10%; height: 30px; display: flex; justify-content: center; align-items: center; border-radius: 20px    ;" onclick="dong()">Đóng</h4>
 
             <h3>Đổi hình đại diện</h3>
@@ -57,7 +57,7 @@ $query_accout = mysqli_query($mysqli, $sql_accout);
 
 
         </form>
-        <form action="./taikhoan_xuli.php?id=<?php echo $row_accout['ma_kh'] ?>" id="doiten" method="post" class="form">
+        <form action="./dao/taikhoan_xuli.php?id=<?php echo $row_accout['ma_kh'] ?>" id="doiten" method="post" class="form">
             <h4 style=" margin-left: 80%; background-color: #fe980f; color: white;width: 10%; height: 30px; display: flex; justify-content: center; align-items: center; border-radius: 20px    ;" onclick="dong()">Đóng</h4>
 
             <h3>Đổi tên tài khoản</h3>
@@ -69,7 +69,7 @@ $query_accout = mysqli_query($mysqli, $sql_accout);
 
 
         </form>
-        <form action="./taikhoan_xuli.php?id=<?php echo $row_accout['ma_kh'] ?>" id="doimk" method="post" class="form">
+        <form action="./dao/taikhoan_xuli.php?id=<?php echo $row_accout['ma_kh'] ?>" id="doimk" method="post" class="form">
             <h4 style=" margin-left: 80%; background-color: #fe980f; color: white;width: 10%; height: 30px; display: flex; justify-content: center; align-items: center; border-radius: 20px    ;" onclick="dong()">Đóng</h4>
 
             <h3>Đổi mật khẩu</h3>

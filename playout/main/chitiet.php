@@ -131,7 +131,7 @@
 s
 <?php
 // tính số lượt xem
-$mysqli = new mysqli("localhost", "root", "", "du_an_mau");
+include_once("./dao/pdo.php");
 $sql_sanpham = "SELECT * FROM hang_hoa where ma_hh = '$_GET[id]'  ORDER BY hang_hoa.ma_hh ASC";
 $result = mysqli_query($mysqli, $sql_sanpham);
 $soluotxem = 1;
@@ -201,8 +201,7 @@ mysqli_query($mysqli, $sql_update_sanpham);
 
         <h1 class="binhluan12" style="width: 70%;   font-size: 50px;font-weight: 600; margin-top: 130px; margin-bottom: 60px;">Các Lượt Bình Luận</h1>
         <?php
-        $mysqli = new mysqli("localhost", "root", "", "du_an_mau");
-        $sql_bl = "SELECT * FROM binh_luan,hang_hoa,khach_hang    
+         $sql_bl = "SELECT * FROM binh_luan,hang_hoa,khach_hang    
                 WHERE  binh_luan.ma_hh = hang_hoa.ma_hh and khach_hang.ma_kh = binh_luan.ma_kh AND  binh_luan.ma_hh = '$_GET[id]'
                 ORDER BY binh_luan.ma_bl DESC";
         $query_bl = mysqli_query($mysqli, $sql_bl);

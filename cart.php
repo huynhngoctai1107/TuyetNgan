@@ -37,7 +37,7 @@ if (!isset($_SESSION['dangnhap'])) {
 
 
 	<?php
-	include("admin/config/config.php");
+	include("dao/pdo.php");
 
 	include("./playout/header/header.php");
 	require("./playout/main/cart.php");

@@ -34,7 +34,7 @@
 <body>
 
     <?php
-    include("admin/config/config.php");
+    include("dao/pdo.php");
     include("./playout/header/header.php");
 
     ?>
@@ -69,7 +69,7 @@
     <div class="limiter">
         <div class="container-login100" style="background-image: url('playout/main/images/bg-01.jpg');">
             <div class="wrap-login100">
-                <form action="./admin/quanly/quanlytrangweb/nguoidung_xuli.php" method="POST">
+                <form action="./admin/quanly/nguoidung/nguoidung_xuli.php" method="POST">
 
 
                     <span class="login100-form-title p-b-34 p-t-27">

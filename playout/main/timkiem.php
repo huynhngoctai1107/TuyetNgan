@@ -4,7 +4,7 @@
 
 
 <?php
-$mysqli1 = new mysqli("localhost", "root", "", "du_an_mau");
+include_once("./dao/pdo.php");
 if (isset($_POST['guitimkiem'])) {
     $tukhoa = $_POST['timkiem'];
     $sql_pro = "SELECT * FROM hang_hoa,loai
@@ -18,29 +18,28 @@ if (isset($_POST['guitimkiem'])) {
 
 
         <div class="row">
-                     <?php
-                    $tim = "Không tìm thấy sản phẩm cần tìm. Xin vui lòng thử lại !";
-                    ?>
+            <?php
+            $tim = "Không tìm thấy sản phẩm cần tìm. Xin vui lòng thử lại !";
+            ?>
             <div class="col-sm-9 padding-right">
                 <div class="features_items">
                     <!--features_items-->
                     <h2 class="title text-center">Sản phẩm cần tìm</h2>
-                  
-                  
+
                     <?php
                     while ($row_pro = mysqli_fetch_array($query_pro)) {
-                        $tim = "" ;
+                        $tim = "";
                     ?>
-                       
-                        <form class="col-sm-4" action="playout/main/giohang/giohang_xuli.php?id=<?php echo $row_pro['ma_hh'] ?>" method="post">
+
+                        <form class="col-sm-4" action="dao/giohang/giohang_xuli.php?id=<?php echo $row_pro['ma_hh'] ?>" method="post">
                             <a href="./chitiet.php?id=<?php echo $row_pro['ma_hh'] ?>" class="product-image-wrapper">
                                 <div class="single-products">
                                     <div class="productinfo text-center">
-                                      
+
                                         <img src="./images/<?php echo $row_pro['hinh'] ?>" width="100%" height="200" alt="" />
                                         <h1 style="color: #696763; font: 25px;"><?php echo $row_pro['ten_hh'] ?> </h1>
 
-                                        <h2><?php echo number_format( $row_pro['don_gia']) ?> <sup>đ</sup></h2>
+                                        <h2><?php echo number_format($row_pro['don_gia']) ?> <sup>đ</sup></h2>
                                         <p>Tiệm bánh Tuyết Ngân</p>
                                         <input type="hidden" value="<?php echo $row_pro['ma_hh'] ?>">
                             </a>
@@ -54,8 +53,8 @@ if (isset($_POST['guitimkiem'])) {
 
         <?php
                     } ?>
-                      <h3><?php echo $tim ?></h3>
-                      <br>
+        <h3><?php echo $tim ?></h3>
+        <br>
         </div>
 
 
@@ -63,7 +62,6 @@ if (isset($_POST['guitimkiem'])) {
 
             <?php
 
-            $mysqli = new mysqli("localhost", "root", "", "du_an_mau");
             $sql_seo = "SELECT * FROM loai,hang_hoa where loai.ma_loai = hang_hoa.ma_loai and dac_biet='1' ORDER BY  ma_hh ASC  ";
             $query_seo = mysqli_query($mysqli, $sql_seo);
 
@@ -79,18 +77,18 @@ if (isset($_POST['guitimkiem'])) {
 
                     <?php
                     while ($row_seo = mysqli_fetch_array($query_seo)) {
-                    ?> <form class="col-sm-4" action="playout/main/giohang/giohang_xuli.php?id=<?php echo $row_seo['ma_hh'] ?>" method="post" style="float: left !important;">
+                    ?> <form class="col-sm-4" action="dao/giohang_xuli.php?id=<?php echo $row_seo['ma_hh'] ?>" method="post" style="float: left !important;">
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     <div class="productinfo text-center">
 
 
                                         <a href="./chitiet.php?id=<?php echo $row_seo['ma_hh'] ?>">
-                                           
+
                                             <img src="./images/<?php echo $row_seo['hinh'] ?>" width="100%" height="200" alt="" />
                                             <h1 style="color: #696763; font: 25px;"><?php echo $row_seo['ten_hh'] ?> </h1>
 
-                                            <h2><?php echo number_format( $row_seo['don_gia']) ?> <sup>đ</sup></h2>
+                                            <h2><?php echo number_format($row_seo['don_gia']) ?> <sup>đ</sup></h2>
                                             <p>Tiệm bánh Tuyết Ngân
                                             </p>
                                             <input type="hidden" value="<?php echo $row_seo['ma_hh'] ?>">
@@ -121,7 +119,6 @@ if (isset($_POST['guitimkiem'])) {
 
 
     <?php
-    $mysqli = new mysqli("localhost", "root", "", "du_an_mau");
     $sql_danhmuc = "SELECT * FROM loai ORDER BY  ma_loai ASC";
     $query_danhmuc = mysqli_query($mysqli, $sql_danhmuc);
 
@@ -166,7 +163,6 @@ if (isset($_POST['guitimkiem'])) {
                 <!--brands_products-->
                 <h2>Danh sách Yêu Thích</h2>
                 <?php
-                $mysqli = new mysqli("localhost", "root", "", "du_an_mau");
                 $sql_pro = "SELECT * FROM loai,hang_hoa where loai.ma_loai = hang_hoa.ma_loai and so_luot_xem > 0 ORDER BY so_luot_xem DESC limit 0,10 ";
                 $query_pro = mysqli_query($mysqli, $sql_pro);
 
@@ -192,7 +188,7 @@ if (isset($_POST['guitimkiem'])) {
 
                                             <p style="color: red;">
                                                 <?php
-                                                echo  number_format( $row_sp['don_gia']);
+                                                echo  number_format($row_sp['don_gia']);
                                                 ?> đ</p>
 
                                         </div>

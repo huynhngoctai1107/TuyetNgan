@@ -91,12 +91,13 @@ if (!isset($_SESSION['dangnhap'])) {
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
                             <li><a href="index.php?id= " class="active">Trang Chủ</a></li>
-                            <li><a href="gioithieu.php?id= " class="active">Giới thiệu</a></li>
+                          
                             <li class="dropdown"><a href="./shop.php">Sản Phẩm<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
                                     <!-- sản phẩm từ dastabase -->
                                 </ul>
                             </li>
+                            <li><a href="gioithieu.php?id= " class="active" style="color: #696763;">Giới thiệu</a></li>
                             <li class="dropdown"><a href="#">Tin Tức<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu?id=" class="sub-menu">
                                     <li><a href="blog.php">Tin Tức </a></li>
@@ -168,5 +169,8 @@ if (!isset($_SESSION['dangnhap'])) {
         box-shadow: 0 0 3px 0 #1183d6;
         border-color: #1183d6;
         outline: none;
+    }
+    .active:hover{
+    color: #FE980F !important;
     }
 </style>

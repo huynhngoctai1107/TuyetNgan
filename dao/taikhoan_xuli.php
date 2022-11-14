@@ -19,12 +19,12 @@ while ($row_accout = mysqli_fetch_array($query_accout)) {
         $sql_doihinh = "UPDATE khach_hang SET hinh='" . $hinh . "' where ma_kh = ' $_GET[id]' ";
         mysqli_query($mysqli, $sql_doihinh);
 
-        header('Location: acout.php');
+        header('Location: ../acout.php');
     } else if (isset($_POST['suaten'])) {
         $ten = $_POST['ten'];
         $sql_doihinh = "UPDATE khach_hang SET ho_ten='" . $ten . "' where ma_kh = ' $_GET[id]' ";
         mysqli_query($mysqli, $sql_doihinh);
-         header('Location: acout.php');
+         header('Location: ../acout.php');
        
      
     } else if (isset($_POST['suamk'])) {
@@ -40,21 +40,21 @@ while ($row_accout = mysqli_fetch_array($query_accout)) {
                 session_start();
                 session_unset();
                 session_destroy();
-                header('Location: .login.php');
+                header('Location: ../login.php');
             } else {
 
 
-                header('Location: .acout.php');
+                header('Location: ../acout.php');
             }
         } else {
-            header('Location: .acout.php');
+            header('Location: ../acout.php');
         
         }
     }else{
         session_start();
         session_unset();
         session_destroy();
-        header('Location: .login.php');
+        header('Location: ../login.php');
     }
 ?>
 
