@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include("config/config.php");
+    include("dao/pdo.php");
     if (isset($_POST['dangnhap1'])) {
         $username = $_POST['email'];
         $password = $_POST['password'];

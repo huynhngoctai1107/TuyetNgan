@@ -1,6 +1,6 @@
 <?php
  
-$mysqli = new mysqli("localhost", "root", "", "du_an_mau");
+include("dao/pdo.php");
 $sql_accout = "SELECT * FROM khach_hang where  ma_kh = '$_GET[id]'  ";
 $query_accout = mysqli_query($mysqli, $sql_accout);
 ?>

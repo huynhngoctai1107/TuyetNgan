@@ -1,5 +1,5 @@
 <?php
-include("../../config/config.php");
+include("dao/pdo.php");
 $nguoilienhe=$_POST['ten'];
 $email = $_POST['email'];
 $loinhan = $_POST['noidung'];

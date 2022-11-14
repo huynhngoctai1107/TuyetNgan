@@ -1,5 +1,5 @@
 <?php
-include("../../config/config.php");
+include("dao/pdo.php");
 
 $tensp = $_POST['tensanpham'];
 $hinh = $_POST['hinhanh'];
@@ -10,26 +10,6 @@ $mota = $_POST['mota'];
 $gia = $_POST['gia'];
  
 $maloai = $_POST['maloaihang'];
-
-//  function formatMoney($number, $fractional=false) {  
-//     if ($fractional) {  
-//         $number = sprintf('%.2f', $number);  
-//     }  
-//     while (true) {  
-//         $replaced = preg_replace('/(-?\d+)(\d\d\d)/', '$1,$2', $number);  
-//         if ($replaced != $number) {  
-//             $number = $replaced;  
-//         } else {  
-//             break;  
-//         }  
-//     }  
-//     return $number;  
-// }
-//  
-// $gia = formatMoney($gia1);
-  
-   
-
 
 if (isset($_POST['themsanpham'])) {
 

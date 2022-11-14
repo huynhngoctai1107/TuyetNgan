@@ -1,5 +1,5 @@
 <?php
-include ("../../config/config.php");
+include("dao/pdo.php");
 //lấy dữ liệu
          $tenloaisp = $_POST['tendanhmuc'];
          $id1= $_POST['id'];

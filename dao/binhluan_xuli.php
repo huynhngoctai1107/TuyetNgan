@@ -1,5 +1,5 @@
 <?php
-include("../../config/config.php");
+include("dao/pdo.php");
  
     $id = $_GET['mabl'];
     $sql_xoasp = "DELETE FROM binh_luan WHERE ma_bl ='" . $id . "'  ";

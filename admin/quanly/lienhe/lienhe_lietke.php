@@ -65,7 +65,7 @@ $num_danhmuc = $count_danhmuc['num_danhmuc'];
     for ($i = 1; $i <= ceil((int) $num_danhmuc / $limit); $i++) :
 
     ?>
-                <li class="page-item"><a class="page-link" href="index.php?action=lienhe&query=them&page=<?= $i ?>"><?= $i ?></a></li>
+                <li class="page-item"><a class="page-link" href="./index.php?action=lienhe&query=them&page=<?= $i ?>"><?= $i ?></a></li>
     <?php
     endfor;
     ?>

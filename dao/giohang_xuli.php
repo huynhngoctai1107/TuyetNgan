@@ -3,7 +3,7 @@ session_start();
 if (!isset($_SESSION['dangnhap'])) {
   header('Location: login.php');
 }
-$a  = $_SESSION['dangnhap'];
+ 
 ?>
 
 
@@ -11,7 +11,7 @@ $a  = $_SESSION['dangnhap'];
 
 // thêm vào giỏ hàng 
 if (isset($_POST['themgiohang'])) {
-    $mysqli = new mysqli("localhost","root","","du_an_mau");
+    include("dao/pdo.php");
 
     $id_sp = isset($_GET['id']) ? $_GET['id'] : '';
     $sanpham = $mysqli->query("SELECT * FROM hang_hoa where  ma_hh = $id_sp ");
