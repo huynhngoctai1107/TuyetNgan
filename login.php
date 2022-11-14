@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include("admin/config/config.php");
+    include("dao/pdo.php");
     if (isset($_POST['dangnhap'])) {
         $username = $_POST['email'];
         $password = $_POST['password'];
@@ -47,7 +47,7 @@
 <body>
     
     <?php
-     include("admin/config/config.php");
+     include("dao/pdo.php");
     include("./playout/header/header.php");
     require("./playout/main/login.php");
     require("./playout/footer/footer.php");
