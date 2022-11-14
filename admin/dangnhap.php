@@ -1,4 +1,5 @@
-
+ 
+ 
 <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
@@ -413,7 +414,7 @@
         <div class="container" id="container">
              
             <div class="form-container sign-in-container">
-                <form action="" method="post">
+                <form action="../dao/dangnhap_xuli_ad.php" method="post">
                     <h1>Đăng nhập</h1>
                     <div class="social-container">
                         <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>

@@ -2,7 +2,7 @@
 
 //Phân trang
 
-include("./dao/pdo.php");
+include(".././dao/pdo.php");
 
 $limit = 6;
 

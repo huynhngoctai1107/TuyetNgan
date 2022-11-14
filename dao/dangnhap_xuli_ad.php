@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include("dao/pdo.php");
+    include("pdo.php");
     if (isset($_POST['dangnhap1'])) {
         $username = $_POST['email'];
         $password = $_POST['password'];
@@ -9,9 +9,9 @@
         $count = mysqli_num_rows($row);
         if ($count > 0) {
             $_SESSION['dangnhap1'] = $username;
-            header("Location: index.php?action=trangchu&query=them");
+            header("Location: ../admin/index.php?action=trangchu&query=them");
         } else {
-            header("Location: dangnhap.php ");
+            header("Location: ../admin/dangnhap.php ");
         }
     }
     ?>

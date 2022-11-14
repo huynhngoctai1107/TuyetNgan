@@ -1,5 +1,5 @@
 <?php
-    include("../dao/pdo.php");
+    include(".././dao/pdo.php");
     if (isset($_GET['action']) && $_GET['query']) {
       $tam = $_GET['action'];
       $query = $_GET['query'];

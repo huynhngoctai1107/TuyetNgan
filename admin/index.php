@@ -179,7 +179,10 @@ if (!isset($_SESSION['dangnhap1'])) {
 
   <main class="main-content border-radius-lg ">
  
+  <?php 
+  include_once("quanly/index/index_xuli.php");
 
+  ?>
   </main>
 
 
