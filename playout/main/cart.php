@@ -75,9 +75,7 @@
 				<td></td>
  				<td class="text-right">
  					<!-- xóa giỏ hàng  -->
- 					<form action="./playout/main/giohang/giohang_xuli.php" method="post">
- 						<button class="btn btn-outline-danger" name="xoatatca">Xóa giỏ hàng</button>
- 					</form>
+ 				 
  				</td>
  			</tr>
 
