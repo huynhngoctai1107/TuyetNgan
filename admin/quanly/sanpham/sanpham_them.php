@@ -33,7 +33,7 @@
             </div>
             <div class="nut1" onclick="hinh13()" id="chu">Thêm</div>
         </div>
-        <form id="chinhsua" action="quanly/quanlytrangweb/sanpham_xuli.php" method="POST" style="width:100% ; height: 100%;">
+        <form id="chinhsua" action=".././dao/sanpham_xuli.php" method="POST" style="width:100% ; height: 100%;">
 
    
             

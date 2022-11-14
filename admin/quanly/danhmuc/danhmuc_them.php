@@ -29,7 +29,7 @@
     <div class="nut">
         <div class="timkiem">
 
-            <form class="timkiem1" action="index.php?action=timkiem1&query=them" method="POST">
+            <form class="timkiem1" action="./admin/index.php?action=timkiem1&query=them" method="POST">
                 <input style="border-radius: 20px 0px 0px 20px ; border:none ;height: 50px; padding-left: 10px ;" type="text" name="tukhoa1" placeholder="Tìm kiếm tên danh mục">
                 <input style="border-radius: 0px 20px 20px 0px ; border:none ;height: 50px; background-color:whitesmoke ; color: black; " type="submit" value="tìm kiếm" name="timkiem1">
             </form>
@@ -37,7 +37,7 @@
         </div>
         <div class="nut1" onclick="hinh13()" id="chu">Thêm</div>
     </div>
-    <form id="chinhsua" action="quanly/quanlytrangweb/danhmuc_xuli.php" method="POST" style="width:100% ; height: 100%;">
+    <form id="chinhsua" action=".././dao/danhmuc_xuli.php" method="POST" style="width:100% ; height: 100%;">
     <p>
            Mã danh mục
             <input type="text" name="id" id="" required>

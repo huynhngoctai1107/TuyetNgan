@@ -6,17 +6,18 @@ $query_sua_danhmucsp = mysqli_query($mysqli, $sql_sua_danhmucsp);
 ?>
 
 <table  class="chinhsua" >
-     <form class="cs" action="quanly/quanlytrangweb/danhmuc_xuli.php?maloai=<?php echo $_GET['maloai'] ?>" method="POST">
+     <form class="cs" action=".././dao/danhmuc_xuli.php?maloai=<?php echo $_GET['maloai'] ?>" method="POST">
         <?php
         while ($dong = mysqli_fetch_array($query_sua_danhmucsp)){
 
         ?>
-        <tr style="border: none;">
+        
+        <tr style="border: none;" >
             <td style="border: none !important;  font-size: 180%;font-weight: 600;">Tên danh mục</td>
         </tr>
         <tr>
         <td style="border: none !important; "><input type="text" value="<?php echo $dong['ten_loai'] ?>" name="tendanhmuc" id=""></td>
- 
+        
         </tr>
         
        

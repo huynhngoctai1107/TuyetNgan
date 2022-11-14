@@ -4,7 +4,7 @@ $query_sua_danhmucsp = mysqli_query($mysqli, $sql_sua_danhmucsp);
 ?>
 
 <table class=" ">
-    <form class="cs" style="" action="quanly/quanlytrangweb/sanpham_xuli.php?maloai=<?php echo $_GET['maloai'] ?>" method="POST">
+    <form class="cs" style="" action=".././dao/sanpham_xuli.php?maloai=<?php echo $_GET['maloai'] ?>" method="POST">
         <?php
         while ($dong = mysqli_fetch_array($query_sua_danhmucsp)) {
 
