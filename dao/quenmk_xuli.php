@@ -29,7 +29,7 @@ include("pdo.php");
     ?>
 <?php
     if ($mk !=0) {
-        $mk = 0;
+       // $mk = 0;
         $n = 6;
         $otp = (generateNumericOTP($n));
         // đổi mk
