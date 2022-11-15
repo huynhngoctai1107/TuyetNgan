@@ -41,7 +41,7 @@ include("pdo.php");
         $body = "Mật khẩu tài khoản của bạn là: " . $otp    ;
         $sender = "From:taihnpc04370@fpt.edu.vn";
         if (mail($receiver, $subject, $body, $sender)) {
-            header('Location: ../index.php');
+            header('Location: ../login.php');
         } else {
             header('Location: ../quenmatkhau.php');
         }
