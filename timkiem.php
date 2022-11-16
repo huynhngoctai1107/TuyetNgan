@@ -34,7 +34,7 @@ session_start();
 <body>
 
     <?php
-    include("admin/config/config.php");
+    include("dao/pdo.php");
     require("./playout/header/header.php");
     include("./playout/main/timkiem.php");
  

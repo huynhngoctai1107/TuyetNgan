@@ -135,18 +135,18 @@ if (isset($_POST['guitimkiem'])) {
                 <!--category-productsr-->
                 <div class="panel panel-default" style="width: 100%; height: auto;">
                     <div class="panel-heading" style="width: 100%; height: auto;">
-                        <h4 class="panel-title" style="width: 100%; height: auto;">
-                            <?php
+                      <?php
                             while ($row_danhmuc = mysqli_fetch_array($query_danhmuc)) {
-                            ?>
+                            ?>    <h4 class="panel-title" style="width: 100%; height: auto;">
+                          
                                 <a href="./index.php?id=<?php echo $row_danhmuc['ma_loai'] ?>">
-                                    <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                   
 
                                     <?php echo $row_danhmuc['ten_loai'] ?></a>
-                            <?php
-                            } ?>
+                           
 
-                        </h4>
+                        </h4> <br> <?php
+                            } ?>
                     </div>
 
                 </div>
