@@ -1,11 +1,13 @@
 <?php
-
 $a =  "";
+$b = "" ;
 $link = "";
 if (!isset($_SESSION['dangnhap'])) {
     $a = "Đăng nhập";
+    $b = "Tài Khoản" ;
     $link = "./login.php";
 } else {
+    $b = ($_SESSION['dangnhap']) ;
     $a = 'Đăng xuất';
     $link = "./playout/header/dangxuat.php";
 }
@@ -25,7 +27,6 @@ if (!isset($_SESSION['dangnhap'])) {
                     <div class="contactinfo">
                         <ul class="nav nav-pills">
                             <script type="text/javascript" src="https://web.cmbliss.com/webtools/hotline/js/hotline.js"></script>
-
                             <li><a href="tel:0949615859"><i class="fa fa-phone"></i> 0949615859</a></li>
                             <li><a href="mailto: htai67934@gmai.com"><i class="fa fa-envelope"></i> htai6734@gmail.com</a></li>
                         </ul>
@@ -60,11 +61,8 @@ if (!isset($_SESSION['dangnhap'])) {
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav" id="an"  >
-                            <li><a href="./acout.php"><i class="fa fa-user"></i> Tài Khoản</a></li>
-
-
+                            <li><a href="./acout.php"><i class="fa fa-user"></i> <?php echo $b ?></a></li>
                             <li><a href="<?php echo $link ?>"><i class="fa fa-lock"></i><?php echo $a ?></a></li>
-
                             <li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Giỏ Hàng</a></li>
                             <li><a href="./admin/index.php?action=trangchu&query=them"><i class="fa fa-star"></i>Trang Quản Trị</a></li>
                         </ul>
