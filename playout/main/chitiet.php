@@ -156,7 +156,7 @@ mysqli_query($mysqli, $sql_update_sanpham);
     while ($row_sp = mysqli_fetch_array($query_sp)) {
     ?>
 
-        <form action="" style="width:100% ; height: auto; display: flex; justify-content: space-between; ">
+        <form action="./dao/giohang_xuli.php?id=<?php echo $row_sp['ma_hh'] ?>" style="width:100% ; height: auto; display: flex; justify-content: space-between; " method="POST">
             <div class="left" style="width:40% ; height: auto; ">
                 <img src="./images/<?php echo $row_sp['hinh'] ?>" width="100%" height="300" alt="" />
 
@@ -170,6 +170,8 @@ mysqli_query($mysqli, $sql_update_sanpham);
 
                 <h1> Giá: <b style="color: red;"><?php echo number_format($row_sp['don_gia']) ?> <sup>đ</sup> </b></h1>
                 <br><br>
+                <input type="hidden" value="<?php echo $row_sp['ma_hh'] ?>" name="ma_hh">
+
                  <button type="submit" style="margin-left:25% ; width:50% ; height: 40px;" name="themgiohang" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
             </div>
 
