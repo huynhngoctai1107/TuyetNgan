@@ -38,7 +38,8 @@ $query_accout = mysqli_query($mysqli, $sql_accout);
             <p onclick="doihinh()">Đổi hình ảnh tài khoản</p>
             <p onclick="doiten()">Đổi tên tài khoản</p>
             <p onclick="doimk()">Đổi mật khẩu</p>
-            <p onclick="donhang()">Lịch sử đơn hàng</p>
+            <p>
+            <a style="color: black;" href="./lsdonhang.php">Lịch sử đơn hàng</a></p>
             <a href="./admin/quanly/index/dangxuat.php" style="color: black;">Đăng xuất tài khoản</a>
 
 

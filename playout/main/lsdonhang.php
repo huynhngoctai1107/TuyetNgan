@@ -1,24 +1,11 @@
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+ 
+ 
 
 
     <div class="container-fluid" id="history" style="margin: 150px 0px;">
         <div class="history" style="margin-top: 120px;">
             <h1 class="text-center">LỊCH SỬ ĐẶT HÀNG</h1>
-            <table class="table table-striped" style="margin-top: 20px;margin-left: 25%; width: 50%;">
+            <table class="table table-striped" style="margin-top: 20px;margin-left: 10%; width: 80%;">
                 <tr class="m">
 
                     <th>
@@ -39,7 +26,9 @@
                     <th>
                         Thời gian đặt
                     </th>
-
+                    <th>
+                        Tình trạng
+                    </th>
 
                 </tr>
 
@@ -48,10 +37,27 @@
                 <tr>
                     <?php
                     include_once("./dao/pdo.php");
-                    $query = "SELECT * FROM hoadon,hang_hoa ";
+                    $us =  $_SESSION['dangnhap'];
+                    $sql = "select * from khach_hang where email = '" . $us . "'";
+                    $query_seo = mysqli_query($mysqli, $sql);
+                    while ($row_seo = mysqli_fetch_array($query_seo)) {
+                        $a = $row_seo['ma_kh'];
+                    }
+
+                    $query = "SELECT * FROM hoadon,hang_hoa,chitiethoadon where hoadon.ma_hd = chitiethoadon.ma_hd and hoadon.ma_kh = '" . $a . "'  ";
                     $query_sanpham = mysqli_query($mysqli, $query);
                     while ($hoadon = mysqli_fetch_array($query_sanpham)) {
-
+                        $tinhtrang = $hoadon['tinhtrang'];
+                        $b = "";
+                        if ($tinhtrang == 0) {
+                            $b = "Đang xử lí";
+                        } else if ($tinhtrang == 1) {
+                            $b = "Đã xử lí";
+                        } else if ($tinhtrang == 2) {
+                            $b = "Đang giao hàng";
+                        } else {
+                            $b = "Đã giao thành công";
+                        }
                     ?>
                 <tr>
                     <td><?php echo $hoadon['ma_hh'] ?></td>
@@ -60,6 +66,7 @@
                     <td><?php echo $hoadon['don_gia'] ?></td>
                     <td><?php echo $hoadon['tongtien'] ?></td>
                     <td><?php echo $hoadon['tgdat'] ?></td>
+                    <td style="color:green ;"><?php echo $b ?></td>
 
 
 

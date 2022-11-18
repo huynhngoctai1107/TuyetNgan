@@ -17,32 +17,20 @@ if (isset($_POST['thanhtoan'])) {
             $cart_data = json_decode($cookie_data, true);
 
             $insert_hoadon = "INSERT INTO hoadon (sdt, diachi, tongtien, ma_kh,tgdat)
-                VALUES ('$sdt', '$diachi', '$tongtien', '$ma_kh','$tg')";
+                VALUES ('" . $sdt . "', '" . $diachi . "', '" . $tongtien . "', '" . $ma_kh . "','" . $tg . "')";
 
-            if ($mysqli->query($insert_hoadon)) {
-                $ma_hd = $mysqli->insert_id;
-                foreach ($cart_data as $key => $value) {
-                    $ma_hh = $value['ma_hh'];
-                    $soluong = $value['soluong'];
-                    $don_gia = $value['don_gia'];
-                    $insert_chitiethoadon = "INSERT INTO chitiethoadon (ma_hd, ma_hh, soluong, gia)
-                                                        VALUES ('$ma_hd', '$ma_hh', '$soluong', '$don_gia' )";
-                    // if ($mysqli->query($insert_chitiethoadon)) {
-                    //     setcookie("cart", "", time() -  3600 * 24 * 30 * 12);
-                        
-                    //     if (isset($_COOKIE['cart'])) {
-                    //         setcookie("cart", "", time() -  3600 * 24 * 30 * 12);
-                            
-                    //     }
-                        
-                        
-                    // }
-                }
+            mysqli_query($mysqli, $insert_hoadon);
+            $ma_hd = mysqli_insert_id($mysqli);
+            foreach ($cart_data as $key => $value) {
+                $ma_hh = $value['ma_hh'];
+                $soluong = $value['soluong'];
+                $don_gia = $value['don_gia'];
+                $insert_chitiethoadon = "INSERT INTO chitiethoadon (ma_hd, ma_hh, soluong, gia)
+                                                        VALUES ('" . $ma_hd . "', '" . $ma_hh . "', '" . $soluong . "', '" . $don_gia . "' )";
+                mysqli_query($mysqli,  $insert_chitiethoadon);
             }
         }
     }
 
-header("location: ../lsdonhang.php")   ; 
+    header("location: ../lsdonhang.php");
 }
- 
-
