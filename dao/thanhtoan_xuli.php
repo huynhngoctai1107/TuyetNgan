@@ -18,7 +18,6 @@ if (isset($_POST['thanhtoan'])) {
 
             $insert_hoadon = "INSERT INTO hoadon (sdt, diachi, tongtien, ma_kh,tgdat)
                 VALUES ('$sdt', '$diachi', '$tongtien', '$ma_kh','$tg')";
-
             if ($mysqli->query($insert_hoadon)) {
                 $ma_hd = $mysqli->insert_id;
                 foreach ($cart_data as $key => $value) {
