@@ -25,9 +25,10 @@ if (isset($_POST['thanhtoan'])) {
                 $ma_hh = $value['ma_hh'];
                 $soluong = $value['soluong'];
                 $don_gia = $value['don_gia'];
-                $insert_chitiethoadon = "INSERT INTO chitiethoadon (ma_hd, ma_hh, soluong, gia)
-                                                        VALUES ('" . $ma_hd . "', '" . $ma_hh . "', '" . $soluong . "', '" . $don_gia . "' )";
+                $insert_chitiethoadon = "INSERT INTO chitiethoadon (ma_hd, ma_hh, soluong, gia) VALUES ('" . $ma_hd . "', '" . $ma_hh . "', '" . $soluong . "', '" . $don_gia . "' )";
                 mysqli_query($mysqli,  $insert_chitiethoadon);
+                unset($_COOKIE['cart']);
+                setcookie('cart', null, -1, '/');
             }
         }
     }

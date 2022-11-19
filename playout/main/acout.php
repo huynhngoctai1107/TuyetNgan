@@ -9,7 +9,9 @@ $query_accout = mysqli_query($mysqli, $sql_accout);
 
 ?>
 
+ 
 
+ 
 
 <div class="noidung" style="width: 70%; margin:60px 15% 100px 15% ; height: auto;  ">
     <?php
@@ -24,6 +26,7 @@ $query_accout = mysqli_query($mysqli, $sql_accout);
         <div class="thongtin" style="width: 100%; margin-top: 50px;">
             <h3>Thông tin chi tiết:</h3>
             <h5>Mã số tài khoản: <?php echo $row_accout['ma_kh'] ?></h5>
+         
 
             <?php
             if ($row_accout['vai_tro'] == 0) {
@@ -39,7 +42,8 @@ $query_accout = mysqli_query($mysqli, $sql_accout);
             <p onclick="doiten()">Đổi tên tài khoản</p>
             <p onclick="doimk()">Đổi mật khẩu</p>
             <p>
-            <a style="color: black;" href="./lsdonhang.php">Lịch sử đơn hàng</a></p>
+                <a style="color: black;" href="./lsdonhang.php">Lịch sử đơn hàng</a>
+            </p>
             <a href="./admin/quanly/index/dangxuat.php" style="color: black;">Đăng xuất tài khoản</a>
 
 
@@ -78,10 +82,10 @@ $query_accout = mysqli_query($mysqli, $sql_accout);
             <span class="material-symbols-outlined">
                 lock
                 <input type="text" name="matkhauht" style="width: 500px; height:50px ;font-family: 'Times New Roman', Times, serif;font-size: 20px; " placeholder=" Nhập lại mật khẩu cũ"></span><br><br>
-                <span class="material-symbols-outlined">
+            <span class="material-symbols-outlined">
                 lock <input type="text" name="matkhaumoi" style="width: 500px; height:50px ; font-family: 'Times New Roman', Times, serif;font-size: 20px;" placeholder="Nhập mật khẩu mới"></span><br><br>
-                <span class="material-symbols-outlined">
-                lock  <input type="text" name="matkhaunl" style="width: 500px; height:50px ; font-family: 'Times New Roman', Times, serif;font-size: 20px;" placeholder="Nhập lại mật khẩu mới"></span>
+            <span class="material-symbols-outlined">
+                lock <input type="text" name="matkhaunl" style="width: 500px; height:50px ; font-family: 'Times New Roman', Times, serif;font-size: 20px;" placeholder="Nhập lại mật khẩu mới"></span>
             <br>
             <br>
             <button type="submit" class="button-62" role="button" name="suamk">Đổi mật khẩu</button>
@@ -97,7 +101,6 @@ $query_accout = mysqli_query($mysqli, $sql_accout);
 
 </div>
 <style>
-  
     .material-symbols-outlined {
         font-variation-settings:
             'FILL'0,
