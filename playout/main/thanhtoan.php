@@ -20,10 +20,10 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Tên</th>
-                        <th>Giá</th>
-                        <th>Số lượng</th>
+                        <th colspan="2">ID</th>
+                        <th colspan="2">Tên</th>
+                        <th colspan="2">Giá</th>
+                        <th colspan="2">Số lượng</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,24 +42,34 @@
                         $tongtatca += $tongtien;
                     ?>
                         <tr>
-                            <td scope="row"><?= $sp['ma_hh'] ?></td>
-                            <td><?= $sp['ten_hh'] ?></td>
-                            <td> <?= number_format($sp['don_gia']) ?> đ</td>
-                            <td width="200px">
+                            <td scope="row" colspan="2"><?= $sp['ma_hh'] ?></td>
+                            <td colspan="2"><?= $sp['ten_hh'] ?></td>
+
+                            <td colspan="2">
                                 <?= $sp['soluong'] ?>
 
                             </td>
+                            <td colspan="2"> <?= number_format($sp['don_gia']) ?> đ</td>
                         </tr>
                     <?php
                     endforeach;
                     ?>
-
                     <tr>
+
+                        <td colspan="2">Phí vận chuyển</td>
+                        <td colspan="2"></td>
+
+                        <td colspan="2"></td>
+                        <td colspan="2"><?= number_format(30000) ?>đ</td>
+                    </tr>
+                    <tr>
+
                         <td colspan="3">Thanh toán</td>
-                        <td>
-                            <b><?= number_format($tongtatca) ?> đ</b>
-                        </td>
-                        <td></td>
+
+                        <td colspan="2"></td>
+                        <td colspan="2">
+                            <b><?= number_format($tongtatca + 30000) ?> đ</b>
+                        </td colspan="2">
                     </tr>
 
                 </tbody>
@@ -77,7 +87,9 @@
             <h5 class="text-center">THÔNG TIN THANH TOÁN</h5>
 
             <form action="./dao/thanhtoan_xuli.php" method="post">
+
                 <input type="hidden" name="ma_kh" id="" value="<?= $khachhang['ma_kh'] ?>">
+              
                 <div class="form-group">
                     <label for="username">Tên đăng nhập</label>
                     <input type="text" name="email" id="" value="<?= $_SESSION['dangnhap'] ?>" class="form-control">
@@ -90,6 +102,14 @@
                     <label for="diachi">Địa chỉ</label>
                     <textarea name="diachi" id="" rows="5" class="form-control" required></textarea>
                 </div>
+                <div class="form-group">
+                    <label for="username">Phương thức thanh toán</label>
+                    <select name="pttt">
+                        <option value="0">Thanh toán khi nhận hàng</option>
+                        <option value="1">Thanh toán qua tài khoản ngân hàng</option>
+                    </select>
+                 </div><br>
+                 
                 <input type="hidden" name="tongtien" id="" value="<?= $tongtatca ?>">
 
                 <button class="btn btn-outline-dark" name="thanhtoan">ĐẶT HÀNG</button>
@@ -99,9 +119,8 @@
 
 </div>
 <style>
-
-    button:hover{
-        background-color:  #fdb45e;
+    button:hover {
+        background-color: #fdb45e;
         color: white !important;
     }
 </style>

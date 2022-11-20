@@ -5,18 +5,34 @@
 $a  = $_SESSION['dangnhap'];
 include_once("./dao/pdo.php");
 $sql_accout = "SELECT * FROM khach_hang where  khach_hang.email = '" . $a . "'  ";
-$query_accout = mysqli_query($mysqli, $sql_accout);
+$result = mysqli_query($mysqli,$sql_accout);
+$row_accout = mysqli_fetch_assoc($result);
+
 
 ?>
 
  
+<?php
+ $sql= "SELECT count(hoadon.ma_kh) as 'sum' FROM khach_hang,hoadon where  khach_hang.email = '" . $a . "' and hoadon.ma_kh= khach_hang.ma_kh GROUP BY hoadon.ma_kh  ";
+$donhang = mysqli_query($mysqli, $sql);
+$c = 0 ;
+ while ($row= mysqli_fetch_array($donhang)) {
+    $c ++ ;
+    $b =  $row['sum'] ;
+ }
+ if( $c == 0){
+        $donhang1=0;
+    
+    }else {
+        $donhang1 = $b;
+    }
 
- 
+?>
+
+
 
 <div class="noidung" style="width: 70%; margin:60px 15% 100px 15% ; height: auto;  ">
-    <?php
-    while ($row_accout = mysqli_fetch_array($query_accout)) {
-    ?>
+    
 
 
         <div class="hinhanh" style="width: 50%; margin-left: 25%; margin-top: 50px; display: flex; align-items: center; flex-direction: column;">
@@ -26,7 +42,8 @@ $query_accout = mysqli_query($mysqli, $sql_accout);
         <div class="thongtin" style="width: 100%; margin-top: 50px;">
             <h3>Thông tin chi tiết:</h3>
             <h5>Mã số tài khoản: <?php echo $row_accout['ma_kh'] ?></h5>
-         
+            <h5>Tổng số đơn hàng: <?php echo $donhang1 ?></h5>
+
 
             <?php
             if ($row_accout['vai_tro'] == 0) {
@@ -42,7 +59,7 @@ $query_accout = mysqli_query($mysqli, $sql_accout);
             <p onclick="doiten()">Đổi tên tài khoản</p>
             <p onclick="doimk()">Đổi mật khẩu</p>
             <p>
-                <a style="color: black;" href="./lsdonhang.php">Lịch sử đơn hàng</a>
+                <a style="color: black;" href="./donhang.php">Lịch sử đơn hàng</a>
             </p>
             <a href="./admin/quanly/index/dangxuat.php" style="color: black;">Đăng xuất tài khoản</a>
 
@@ -95,9 +112,7 @@ $query_accout = mysqli_query($mysqli, $sql_accout);
 
 
 
-    <?php }
-    ?>
-
+    
 
 </div>
 <style>
