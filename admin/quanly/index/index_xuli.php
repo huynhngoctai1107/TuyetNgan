@@ -21,21 +21,29 @@
       //sửa
     } else if ($tam == "sanpham" && $query == 'sua') {
       include("quanly/sanpham/sanpham_sua.php");
-      include("quanly/sanpham/sanpham_lietke.php");     
+      include("quanly/sanpham/sanpham_lietke.php");   
+
     } else if ($tam == "khach_hang" && $query == 'them') {
-      
       include("quanly/nguoidung/nguoidung_lietke.php");
     } else if ($tam == "khach_hang" && $query == 'sua') {
       include("quanly/nguoidung/nguoidung_sua.php");
       include("quanly/nguoidung/nguoidung_lietke.php");
-
     //lien he
     }else if ($tam == "lienhe" && $query == 'them') {
        include("quanly/lienhe/lienhe_lietke.php");
-
+      //donhang
+    }else if ($tam == "hoadon" && $query == 'them') {
+        include("quanly/donhang/donhang_them.php");
+        include("quanly/donhang/donhang_lietke.php");
+      } else if ($tam == "hoadon" && $query == 'sua') {
+        include("quanly/donhang/donhang_sua.php");
+        include("quanly/donhang/donhang_lietke.php");
 
       //tiemkiem 
-    } else if ($tam == 'timkiem2' && $query == 'them') {
+    } else if ($tam == 'timkiem3' && $query == 'them') {
+        include("quanly/donhang/donhang_timkiem.php");
+      } 
+      else if ($tam == 'timkiem2' && $query == 'them') {
        include("quanly/lienhe/lienhe_timkiem.php");
 
     } else if ($tam == 'timkiem2' && $query == 'them') {
@@ -47,9 +55,7 @@
       include("quanly/sanpham/sanpham_sua.php");
 
 
-     } else if ($tam == 'timkiem3' && $query == 'them') {
-        include("quanly/donhang/donhang_timkiem.php");
-      }
+     }
      else if ($tam == 'timkiem1' && $query == 'them') {
       include("quanly/danhmuc/danhmuc_timkiem.php");
     } else if ($tam == 'timkiem1' && $query == 'sua') {
@@ -65,4 +71,3 @@
     }else if ($tam == 'binhluan' && $query == 'them') {
        include("quanly/binhluan/binhluan_lietke.php");
     }
-    ?>
