@@ -59,7 +59,7 @@ if (!isset($_SESSION['dangnhap1'])) {
       <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
       <a class="navbar-brand m-0" href="index.php?action=trangchu&query=them" target="_blank">
 
-        <span class="ms-1 font-weight-bold text-white">Girl Friend</span>
+        <span class="ms-1 font-weight-bold text-white">Tuyet Ngan Cake</span>
       </a>
     </div>
 
@@ -80,9 +80,7 @@ if (!isset($_SESSION['dangnhap1'])) {
         <li class="nav-item">
           <a class="nav-link text-white " href="index.php?action=trangchu&query=them">
 
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">dashboard</i>
-            </div>
+          <i class="large material-icons">insights</i>
 
             <span class="nav-link-text ms-1">Trang Chủ</span>
           </a>
@@ -92,9 +90,7 @@ if (!isset($_SESSION['dangnhap1'])) {
         <li class="nav-item">
           <a class="nav-link text-white " href="index.php?action=danhmucsanpham&query=them">
 
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">table_view</i>
-            </div>
+          <i class="large material-icons">local_offer</i>
 
             <span class="nav-link-text ms-1">Danh mục sản phẩm</span>
           </a>
@@ -104,9 +100,7 @@ if (!isset($_SESSION['dangnhap1'])) {
         <li class="nav-item">
           <a class="nav-link text-white " href="index.php?action=sanpham&query=them">
 
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">receipt_long</i>
-            </div>
+          <i class="large material-icons">inventory_2</i>
 
             <span class="nav-link-text ms-1">Sản Phẩm</span>
           </a>
@@ -116,9 +110,7 @@ if (!isset($_SESSION['dangnhap1'])) {
         <li class="nav-item">
           <a class="nav-link text-white " href="index.php?action=khach_hang&query=them">
 
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">view_in_ar</i>
-            </div>
+          <i class="large material-icons">group</i>
 
             <span class="nav-link-text ms-1">Người Dùng</span>
           </a>
@@ -128,20 +120,32 @@ if (!isset($_SESSION['dangnhap1'])) {
         <li class="nav-item">
           <a class="nav-link text-white " href="index.php?action=donhang&query=them">
 
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">format_textdirection_r_to_l</i>
-            </div>
+          <i class="large material-icons">production_quantity_limits</i>
 
             <span class="nav-link-text ms-1">Đơn Hàng</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="index.php?action=binhluan&query=them">
+
+          <i class="large material-icons">comment</i>
+
+            <span class="nav-link-text ms-1">Bình Luận</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="index.php?action=giamgia&query=them">
+
+          <i class="large material-icons">receipt</i>
+
+            <span class="nav-link-text ms-1">Voucher</span>
           </a>
         </li>
 
         <li class="nav-item">
           <a class="nav-link text-white " href="index.php?action=lienhe&query=them">
 
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">table_view</i>
-            </div>
+          <i class="large material-icons">call</i>
 
             <span class="nav-link-text ms-1">Liên Hệ</span>
           </a>
@@ -149,7 +153,7 @@ if (!isset($_SESSION['dangnhap1'])) {
 
 
         <li class="nav-item mt-3">
-          <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages</h6>
+          <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Tài khoản</h6>
         </li>
 
 
@@ -158,10 +162,8 @@ if (!isset($_SESSION['dangnhap1'])) {
         <li class="nav-item">
           <a class="nav-link text-white " href="./quanly/index/dangxuat.php">
 
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">login</i>
-            </div>
-
+            
+          <i class="large material-icons">logout</i>
             <span class="nav-link-text ms-1">Đăng xuất</span>
           </a>
         </li>

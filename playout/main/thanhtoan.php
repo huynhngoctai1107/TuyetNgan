@@ -19,6 +19,24 @@
             <h5 class="text-center">CHI TIẾT HÓA ĐƠN</h5>
             <table class="table">
                 <thead>
+                    <tr >
+                        <form action="" method="POST">
+                            <th colspan="6" >
+
+                                <input type="text" style="width:100% ; height: 40px; padding-left: 10px;" placeholder="Mã Voucher" name="voucher">
+                            </th>
+
+                            <th colspan="2"><button style="width:100%; background-color: #FE980F; color: white; border: none;height: 40px;" type="submit" name="apdung">Áp dụng</button></th>
+                        </form>
+                        <?php
+                           $giamgia = 0;
+                           $thongbao ="";
+                          
+                        include('./dao/voucher_xuli.php');
+                         echo $thongbao  ;
+                        ?>
+                    </tr>
+                    
                     <tr>
                         <th colspan="2">ID</th>
                         <th colspan="2">Tên</th>
@@ -56,19 +74,36 @@
                     ?>
                     <tr>
 
-                        <td colspan="2">Phí vận chuyển</td>
-                        <td colspan="2"></td>
-
-                        <td colspan="2"></td>
-                        <td colspan="2"><?= number_format(30000) ?>đ</td>
-                    </tr>
-                    <tr>
-
                         <td colspan="3">Thanh toán</td>
 
                         <td colspan="2"></td>
                         <td colspan="2">
-                            <b><?= number_format($tongtatca + 30000) ?> đ</b>
+                            <b>+<?= number_format($tongtatca) ?> đ</b>
+                        </td colspan="2">
+                    </tr>
+                    <tr>
+
+                        <td colspan="2">Phí vận chuyển</td>
+                        <td colspan="2"></td>
+
+                        <td colspan="2"></td>
+                        <td colspan="2">+<?= number_format(30000) ?> đ</td>
+                    </tr>
+                    <tr>
+
+                        <td colspan="2">Voucher giảm giá</td>
+                        <td colspan="2"></td>
+
+                        <td colspan="2"></td>
+                        <td colspan="2">-<?= number_format($giamgia) ?> đ</td>
+                    </tr>
+                    <tr>
+
+                        <td colspan="3">Tổng Thanh toán</td>
+
+                        <td colspan="2"></td>
+                        <td colspan="2">
+                            <b style="color: red;"><?= number_format($tongtatca + 30000 - $giamgia) ?> đ</b>
                         </td colspan="2">
                     </tr>
 
@@ -89,7 +124,7 @@
             <form action="./dao/thanhtoan_xuli.php" method="post">
 
                 <input type="hidden" name="ma_kh" id="" value="<?= $khachhang['ma_kh'] ?>">
-              
+
                 <div class="form-group">
                     <label for="username">Tên đăng nhập</label>
                     <input type="text" name="email" id="" value="<?= $_SESSION['dangnhap'] ?>" class="form-control">
@@ -108,9 +143,9 @@
                         <option value="0">Thanh toán khi nhận hàng</option>
                         <option value="1">Thanh toán qua tài khoản ngân hàng</option>
                     </select>
-                 </div><br>
-                 
-                <input type="hidden" name="tongtien" id="" value="<?= $tongtatca ?>">
+                </div><br>
+
+                <input type="hidden" name="tongtien" id="" value="<?= $tongtatca - $giamgia ?>">
 
                 <button class="btn btn-outline-dark" name="thanhtoan">ĐẶT HÀNG</button>
             </form>
