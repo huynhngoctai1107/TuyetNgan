@@ -126,7 +126,7 @@ if (!isset($_SESSION['dangnhap1'])) {
 
 
         <li class="nav-item">
-          <a class="nav-link text-white " href="index.php?action=donhang&query=them">
+          <a class="nav-link text-white " href="index.php?action=hoadon&query=them">
 
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">format_textdirection_r_to_l</i>

@@ -15,7 +15,7 @@
                 <div class="contact-form">
                     <h2 class="title text-center">Liên Hệ</h2>
                     <div class="status alert alert-success" style="display: none"></div>
-                    <form action="./admin/quanly/quanlytrangweb/lienhe_xuli.php" method="post">
+                    <form action="dao/lienhe_xuli.php" method="post">
                         <div class="form-group col-md-6">
                             <input type="text" name="ten" class="form-control" required="required" placeholder="Tên">
                         </div>

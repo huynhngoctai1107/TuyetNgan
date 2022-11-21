@@ -1,12 +1,14 @@
 <div class="container-fluid" id="history" style="margin: 150px 0px;">
      <div class="history" style="margin-top: 120px;">
          <h1 class="text-center">Lịch sử đơn hàng</h1>
+         <form action="./dao/donhang_xuli.php" method="post">
          <table class="table table-striped" style="margin-top: 20px;margin-left: 10%; width: 80%;">
              <tr class="m" >
 
                  <th >
                      Mã đơn hàng
                  </th>
+                   
                  <th>
                     Tên khách hàng
                  </th>
@@ -38,6 +40,7 @@
 
 
              <tr>
+             </form>
                  <?php
                     include_once("./dao/pdo.php");
                     $us =  $_SESSION['dangnhap'];

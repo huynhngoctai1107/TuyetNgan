@@ -9,7 +9,7 @@ if (isset($_POST['gui'])) {
    
     $sql_themlienhe = "INSERT INTO lienhe(ten,email,noidung) VALUES('".$nguoilienhe."','".$email."','".$loinhan."')";
     mysqli_query($mysqli, $sql_themlienhe);
-    header('Location: ../../../contact-us.php');
+    header('Location: ../contact-us.php');
 
 /*
 } elseif (isset($_POST['suamonan'])) {
