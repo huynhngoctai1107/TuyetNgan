@@ -80,7 +80,7 @@ if (!isset($_SESSION['dangnhap1'])) {
         <li class="nav-item">
           <a class="nav-link text-white " href="index.php?action=trangchu&query=them">
 
-          <i class="large material-icons">insights</i>
+            <i class="large material-icons">insights</i>
 
             <span class="nav-link-text ms-1">Trang Chủ</span>
           </a>
@@ -90,7 +90,7 @@ if (!isset($_SESSION['dangnhap1'])) {
         <li class="nav-item">
           <a class="nav-link text-white " href="index.php?action=danhmucsanpham&query=them">
 
-          <i class="large material-icons">local_offer</i>
+            <i class="large material-icons">local_offer</i>
 
             <span class="nav-link-text ms-1">Danh mục sản phẩm</span>
           </a>
@@ -100,7 +100,7 @@ if (!isset($_SESSION['dangnhap1'])) {
         <li class="nav-item">
           <a class="nav-link text-white " href="index.php?action=sanpham&query=them">
 
-          <i class="large material-icons">inventory_2</i>
+            <i class="large material-icons">inventory_2</i>
 
             <span class="nav-link-text ms-1">Sản Phẩm</span>
           </a>
@@ -110,7 +110,7 @@ if (!isset($_SESSION['dangnhap1'])) {
         <li class="nav-item">
           <a class="nav-link text-white " href="index.php?action=khach_hang&query=them">
 
-          <i class="large material-icons">group</i>
+            <i class="large material-icons">group</i>
 
             <span class="nav-link-text ms-1">Người Dùng</span>
           </a>
@@ -120,7 +120,7 @@ if (!isset($_SESSION['dangnhap1'])) {
         <li class="nav-item">
           <a class="nav-link text-white " href="index.php?action=donhang&query=them">
 
-          <i class="large material-icons">production_quantity_limits</i>
+            <i class="large material-icons">production_quantity_limits</i>
 
             <span class="nav-link-text ms-1">Đơn Hàng</span>
           </a>
@@ -128,7 +128,7 @@ if (!isset($_SESSION['dangnhap1'])) {
         <li class="nav-item">
           <a class="nav-link text-white " href="index.php?action=binhluan&query=them">
 
-          <i class="large material-icons">comment</i>
+            <i class="large material-icons">comment</i>
 
             <span class="nav-link-text ms-1">Bình Luận</span>
           </a>
@@ -136,7 +136,7 @@ if (!isset($_SESSION['dangnhap1'])) {
         <li class="nav-item">
           <a class="nav-link text-white " href="index.php?action=giamgia&query=them">
 
-          <i class="large material-icons">receipt</i>
+            <i class="large material-icons">receipt</i>
 
             <span class="nav-link-text ms-1">Voucher</span>
           </a>
@@ -145,7 +145,7 @@ if (!isset($_SESSION['dangnhap1'])) {
         <li class="nav-item">
           <a class="nav-link text-white " href="index.php?action=lienhe&query=them">
 
-          <i class="large material-icons">call</i>
+            <i class="large material-icons">call</i>
 
             <span class="nav-link-text ms-1">Liên Hệ</span>
           </a>
@@ -162,8 +162,8 @@ if (!isset($_SESSION['dangnhap1'])) {
         <li class="nav-item">
           <a class="nav-link text-white " href="./quanly/index/dangxuat.php">
 
-            
-          <i class="large material-icons">logout</i>
+
+            <i class="large material-icons">logout</i>
             <span class="nav-link-text ms-1">Đăng xuất</span>
           </a>
         </li>
@@ -180,11 +180,11 @@ if (!isset($_SESSION['dangnhap1'])) {
   </aside>
 
   <main class="main-content border-radius-lg ">
- 
-  <?php 
-  include_once("quanly/index/index_xuli.php");
 
-  ?>
+    <?php
+    include_once("quanly/index/index_xuli.php");
+
+    ?>
   </main>
 
 

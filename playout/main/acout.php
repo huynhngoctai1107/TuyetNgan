@@ -5,114 +5,112 @@
 $a  = $_SESSION['dangnhap'];
 include_once("./dao/pdo.php");
 $sql_accout = "SELECT * FROM khach_hang where  khach_hang.email = '" . $a . "'  ";
-$result = mysqli_query($mysqli,$sql_accout);
+$result = mysqli_query($mysqli, $sql_accout);
 $row_accout = mysqli_fetch_assoc($result);
-
 
 ?>
 
- 
+
 <?php
- $sql= "SELECT count(hoadon.ma_kh) as 'sum' FROM khach_hang,hoadon where  khach_hang.email = '" . $a . "' and hoadon.ma_kh= khach_hang.ma_kh GROUP BY hoadon.ma_kh  ";
+$sql = "SELECT count(hoadon.ma_kh) as 'sum' FROM khach_hang,hoadon where  khach_hang.email = '" . $a . "' and hoadon.ma_kh= khach_hang.ma_kh GROUP BY hoadon.ma_kh  ";
 $donhang = mysqli_query($mysqli, $sql);
-$c = 0 ;
- while ($row= mysqli_fetch_array($donhang)) {
-    $c ++ ;
-    $b =  $row['sum'] ;
- }
- if( $c == 0){
-        $donhang1=0;
-    
-    }else {
-        $donhang1 = $b;
-    }
+$c = 0;
+while ($row = mysqli_fetch_array($donhang)) {
+    $c++;
+    $b =  $row['sum'];
+}
+if ($c == 0) {
+    $donhang1 = 0;
+} else {
+    $donhang1 = $b;
+}
 
 ?>
 
 
 
 <div class="noidung" style="width: 70%; margin:60px 15% 100px 15% ; height: auto;  ">
-    
-
-
-        <div class="hinhanh" style="width: 50%; margin-left: 25%; margin-top: 50px; display: flex; align-items: center; flex-direction: column;">
-            <img src="./images/<?php echo $row_accout['hinh'] ?>" width="210px" height="210px" style=" border-radius: 210px;" alt="">
-            <h3 style="text-align: center; font-style: italic;"> <?php echo $row_accout['ho_ten'] ?></h3>
-        </div>
-        <div class="thongtin" style="width: 100%; margin-top: 50px;">
-            <h3>Thông tin chi tiết:</h3>
-            <h5>Mã số tài khoản: <?php echo $row_accout['ma_kh'] ?></h5>
-            <h5>Tổng số đơn hàng: <?php echo $donhang1 ?></h5>
-
-
-            <?php
-            if ($row_accout['vai_tro'] == 0) {
-                $b = "Người dùng";
-            } else {
-                $b = "Quản trị viên";
-            }
-
-            ?>
-            <h5>Loại tài khoản: <?php echo $b ?></h5>
-            <h3>Quyền của người dùng:</h3>
-            <p onclick="doihinh()">Đổi hình ảnh tài khoản</p>
-            <p onclick="doiten()">Đổi tên tài khoản</p>
-            <p onclick="doimk()">Đổi mật khẩu</p>
-            <p>
-                <a style="color: black;" href="./donhang.php">Lịch sử đơn hàng</a>
-            </p>
-            <a href="./admin/quanly/index/dangxuat.php" style="color: black;">Đăng xuất tài khoản</a>
-
-
-        </div>
-
-
-        <form action="./dao/taikhoan_xuli.php?id=<?php echo $row_accout['ma_kh'] ?>" id="doihinh" method="post" class="form">
-            <h4 style=" margin-left: 80%; background-color: #fe980f; color: white;width: 10%; height: 30px; display: flex; justify-content: center; align-items: center; border-radius: 20px    ;" onclick="dong()">Đóng</h4>
-
-            <h3>Đổi hình đại diện</h3>
-            <br>
-            <input type="file" name="hinh" value="<?php $row_accout['hinh'] ?>">
-            <br>
-            <br>
-            <button type="submit" class="button-62" role="button" name="gui">Đổi hình đại diện</button>
-
-
-        </form>
-        <form action="./dao/taikhoan_xuli.php?id=<?php echo $row_accout['ma_kh'] ?>" id="doiten" method="post" class="form">
-            <h4 style=" margin-left: 80%; background-color: #fe980f; color: white;width: 10%; height: 30px; display: flex; justify-content: center; align-items: center; border-radius: 20px    ;" onclick="dong()">Đóng</h4>
-
-            <h3>Đổi tên tài khoản</h3>
-            <br>
-            <input type="text" name="ten" style="width: 300px; height:50px ; " value="<?php echo $row_accout['ho_ten'] ?>">
-            <br>
-            <br>
-            <button type="submit" class="button-62" role="button" name="suaten">Đổi tên tài khoản</button>
-
-
-        </form>
-        <form action="./dao/taikhoan_xuli.php?id=<?php echo $row_accout['ma_kh'] ?>" id="doimk" method="post" class="form">
-            <h4 style=" margin-left: 80%; background-color: #fe980f; color: white;width: 10%; height: 30px; display: flex; justify-content: center; align-items: center; border-radius: 20px    ;" onclick="dong()">Đóng</h4>
-
-            <h3>Đổi mật khẩu</h3>
-            <br>
-            <span class="material-symbols-outlined">
-                lock
-                <input type="text" name="matkhauht" style="width: 500px; height:50px ;font-family: 'Times New Roman', Times, serif;font-size: 20px; " placeholder=" Nhập lại mật khẩu cũ"></span><br><br>
-            <span class="material-symbols-outlined">
-                lock <input type="text" name="matkhaumoi" style="width: 500px; height:50px ; font-family: 'Times New Roman', Times, serif;font-size: 20px;" placeholder="Nhập mật khẩu mới"></span><br><br>
-            <span class="material-symbols-outlined">
-                lock <input type="text" name="matkhaunl" style="width: 500px; height:50px ; font-family: 'Times New Roman', Times, serif;font-size: 20px;" placeholder="Nhập lại mật khẩu mới"></span>
-            <br>
-            <br>
-            <button type="submit" class="button-62" role="button" name="suamk">Đổi mật khẩu</button>
-
-
-        </form>
 
 
 
-    
+    <div class="hinhanh" style="width: 50%; margin-left: 25%; margin-top: 50px; display: flex; align-items: center; flex-direction: column;">
+        <img src="./images/<?php echo $row_accout['hinh'] ?>" width="210px" height="210px" style=" border-radius: 210px;" alt="">
+        <h3 style="text-align: center; font-style: italic;"> <?php echo $row_accout['ho_ten'] ?></h3>
+    </div>
+    <div class="thongtin" style="width: 100%; margin-top: 50px;">
+        <h3>Thông tin chi tiết:</h3>
+        <h5>Mã số tài khoản: <?php echo $row_accout['ma_kh'] ?></h5>
+        <h5>Tổng số đơn hàng: <?php echo $donhang1 ?></h5>
+
+
+        <?php
+        if ($row_accout['vai_tro'] == 0) {
+            $b = "Người dùng";
+        } else {
+            $b = "Quản trị viên";
+        }
+
+        ?>
+        <h5>Loại tài khoản: <?php echo $b ?></h5>
+        <h3>Quyền của người dùng:</h3>
+        <p onclick="doihinh()">Đổi hình ảnh tài khoản</p>
+        <p onclick="doiten()">Đổi tên tài khoản</p>
+        <p onclick="doimk()">Đổi mật khẩu</p>
+        <p>
+            <a style="color: black;" href="./donhang.php">Lịch sử đơn hàng</a>
+        </p>
+        <a href="./admin/quanly/index/dangxuat.php" style="color: black;">Đăng xuất tài khoản</a>
+
+
+    </div>
+
+
+    <form action="./dao/taikhoan_xuli.php?id=<?php echo $row_accout['ma_kh'] ?>" id="doihinh" method="post" class="form">
+        <h4 style=" margin-left: 80%; background-color: #fe980f; color: white;width: 10%; height: 30px; display: flex; justify-content: center; align-items: center; border-radius: 20px    ;" onclick="dong()">Đóng</h4>
+
+        <h3>Đổi hình đại diện</h3>
+        <br>
+        <input type="file" name="hinh" value="<?php $row_accout['hinh'] ?>">
+        <br>
+        <br>
+        <button type="submit" class="button-62" role="button" name="gui">Đổi hình đại diện</button>
+
+
+    </form>
+    <form action="./dao/taikhoan_xuli.php?id=<?php echo $row_accout['ma_kh'] ?>" id="doiten" method="post" class="form">
+        <h4 style=" margin-left: 80%; background-color: #fe980f; color: white;width: 10%; height: 30px; display: flex; justify-content: center; align-items: center; border-radius: 20px    ;" onclick="dong()">Đóng</h4>
+
+        <h3>Đổi tên tài khoản</h3>
+        <br>
+        <input type="text" name="ten" style="width: 300px; height:50px ; " value="<?php echo $row_accout['ho_ten'] ?>">
+        <br>
+        <br>
+        <button type="submit" class="button-62" role="button" name="suaten">Đổi tên tài khoản</button>
+
+
+    </form>
+    <form action="./dao/taikhoan_xuli.php?id=<?php echo $row_accout['ma_kh'] ?>" id="doimk" method="post" class="form">
+        <h4 style=" margin-left: 80%; background-color: #fe980f; color: white;width: 10%; height: 30px; display: flex; justify-content: center; align-items: center; border-radius: 20px    ;" onclick="dong()">Đóng</h4>
+
+        <h3>Đổi mật khẩu</h3>
+        <br>
+        <span class="material-symbols-outlined">
+            lock
+            <input type="text" name="matkhauht" style="width: 500px; height:50px ;font-family: 'Times New Roman', Times, serif;font-size: 20px; " placeholder=" Nhập lại mật khẩu cũ"></span><br><br>
+        <span class="material-symbols-outlined">
+            lock <input type="text" name="matkhaumoi" style="width: 500px; height:50px ; font-family: 'Times New Roman', Times, serif;font-size: 20px;" placeholder="Nhập mật khẩu mới"></span><br><br>
+        <span class="material-symbols-outlined">
+            lock <input type="text" name="matkhaunl" style="width: 500px; height:50px ; font-family: 'Times New Roman', Times, serif;font-size: 20px;" placeholder="Nhập lại mật khẩu mới"></span>
+        <br>
+        <br>
+        <button type="submit" class="button-62" role="button" name="suamk">Đổi mật khẩu</button>
+
+
+    </form>
+
+
+
+
 
 </div>
 <style>

@@ -37,7 +37,6 @@ session_start();
     include("dao/pdo.php");
     require("./playout/header/header.php");
     include("./playout/main/timkiem.php");
- 
     require("./playout/footer/footer.php");
     ?>
 
