@@ -32,26 +32,10 @@
     //lien he
     }else if ($tam == "lienhe" && $query == 'them') {
        include("quanly/lienhe/lienhe_lietke.php");
-      //voucher 
-    }else if ($tam == "binhluan" && $query == 'them') {
-      include("quanly/binhluan/binhluan_lietke.php");
-     } else if($tam == "giamgia" && $query == 'them'){
-      include("quanly/giamgia/giamgia_them.php");
-      include("quanly/giamgia/giamgia_lietke.php");
 
 
-
-     
-    }else if($tam == "giamgia" && $query == 'sua'){
-      include("quanly/giamgia/giamgia_sua.php");
-      include("quanly/giamgia/giamgia_lietke.php");  
-    }
-    
-    
-    
-    
-     //tiemkiem 
-    else if ($tam == 'timkiem2' && $query == 'them') {
+      //tiemkiem 
+    } else if ($tam == 'timkiem2' && $query == 'them') {
        include("quanly/lienhe/lienhe_timkiem.php");
 
     } else if ($tam == 'timkiem2' && $query == 'them') {
@@ -59,9 +43,15 @@
       include("quanly/nguoidung/nguoidung_timkiem.php");
     } else if ($tam == 'timkiem' && $query == 'them') {
       include("quanly/sanpham/sanpham_timkiem.php");
+    } else if ($tam == 'timkiem' && $query == 'sua') {
+      include("quanly/sanpham/sanpham_sua.php");
+
+
+      // danh muc
     } else if ($tam == 'timkiem1' && $query == 'them') {
       include("quanly/danhmuc/danhmuc_timkiem.php");
-    }else if ($tam == 'timkiem4' && $query == 'them') {
-      include("quanly/giamgia/giamgia_timkiem.php");
- 
+    } else if ($tam == 'timkiem1' && $query == 'sua') {
+      include("quanly/danhmuc/danhmuc_sua.php");
     }
+
+    ?>
