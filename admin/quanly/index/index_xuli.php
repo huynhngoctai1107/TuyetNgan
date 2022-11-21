@@ -6,7 +6,7 @@
     } else {
       $tam = '';
       $query = '';
-    }
+    } //danhmuc
     if ($tam == "danhmucsanpham" && $query == 'them') {
       include("quanly/danhmuc/danhmuc_them.php");
       include("quanly/danhmuc/danhmuc_lietke.php");
@@ -15,14 +15,15 @@
       include("quanly/danhmuc/danhmuc_lietke.php");
     } else if ($tam == "trangchu" && $query == 'them') {
       include("quanly/index/main.php");
+      //sanpham
     } else if ($tam == "sanpham" && $query == 'them') {
       include("quanly/sanpham/sanpham_them.php");
       include("quanly/sanpham/sanpham_lietke.php");
-      //sửa
+      //sửa sp
     } else if ($tam == "sanpham" && $query == 'sua') {
       include("quanly/sanpham/sanpham_sua.php");
       include("quanly/sanpham/sanpham_lietke.php");   
-
+      //khachhang
     } else if ($tam == "khach_hang" && $query == 'them') {
       include("quanly/nguoidung/nguoidung_lietke.php");
     } else if ($tam == "khach_hang" && $query == 'sua') {
@@ -39,10 +40,11 @@
         include("quanly/donhang/donhang_sua.php");
         include("quanly/donhang/donhang_lietke.php");
 
-      //tiemkiem 
+      //tiemkiem donhang
     } else if ($tam == 'timkiem3' && $query == 'them') {
         include("quanly/donhang/donhang_timkiem.php");
-      } 
+     
+      } //tiemkiem lienhe
       else if ($tam == 'timkiem2' && $query == 'them') {
        include("quanly/lienhe/lienhe_timkiem.php");
 
