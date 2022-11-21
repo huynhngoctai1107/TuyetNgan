@@ -47,11 +47,22 @@
       include("quanly/sanpham/sanpham_sua.php");
 
 
-      // danh muc
-    } else if ($tam == 'timkiem1' && $query == 'them') {
+     } else if ($tam == 'timkiem3' && $query == 'them') {
+        include("quanly/donhang/donhang_timkiem.php");
+      }
+     else if ($tam == 'timkiem1' && $query == 'them') {
       include("quanly/danhmuc/danhmuc_timkiem.php");
     } else if ($tam == 'timkiem1' && $query == 'sua') {
       include("quanly/danhmuc/danhmuc_sua.php");
+    }else if ($tam == 'timkiem4' && $query == 'them') {
+      include("quanly/giamgia/giamgia_timkiem.php");
+    } else if ($tam == 'giamgia' && $query == 'sua') {
+      include("quanly/giamgia/giamgia_sua.php");
+      include("quanly/giamgia/giamgia_lietke.php");
+    } else if ($tam == 'giamgia' && $query == 'them') {
+      include("quanly/giamgia/giamgia_them.php");
+      include("quanly/giamgia/giamgia_lietke.php");
+    }else if ($tam == 'binhluan' && $query == 'them') {
+       include("quanly/binhluan/binhluan_lietke.php");
     }
-
     ?>

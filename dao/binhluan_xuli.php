@@ -1,5 +1,5 @@
 <?php
-include("dao/pdo.php");
+include("pdo.php");
  
 
 $binhluan = $_POST['noidung'];
@@ -12,11 +12,11 @@ if (isset($_POST['guibinhluan'])) {
 
          $sql_them = "INSERT INTO binh_luan(noi_dung,ngay_bl,ma_hh,ma_kh) VALUE('".$binhluan."','".$ngay."','".$mhh."','".$mkh."')";
          mysqli_query($mysqli,$sql_them);
-         header('Location: ../../index.php');
+         header('Location: ../index.php');
  } else{
     $id = $_GET['mabl'];
     $sql_xoasp = "DELETE FROM binh_luan WHERE ma_bl ='" . $id . "'  ";
     mysqli_query($mysqli, $sql_xoasp);
-    header('Location: ../../index.php?action=binhluan&query=them');
+    header('Location: ../admin/index.php?action=binhluan&query=them');
 }
 ?>
