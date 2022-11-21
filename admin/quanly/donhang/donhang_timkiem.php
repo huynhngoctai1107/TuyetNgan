@@ -8,7 +8,7 @@ if (isset($_POST['timkiem3'])) {
     $tukhoa = $_POST['tukhoa3'];
 }
 $sql_pro = "SELECT * FROM hoadon,khach_hang
-    WHERE  hoadon.ma_kh = khach_hang.ma_kh and ho_ten LIKE '%" . $tukhoa . "%' ";
+    WHERE  hoadon.ma_kh = khach_hang.ma_kh and sdt LIKE '%" . $tukhoa . "%' ";
 $query_pro = mysqli_query($mysqli, $sql_pro);
 
 ?>
@@ -29,25 +29,47 @@ $query_pro = mysqli_query($mysqli, $sql_pro);
     $i = -1;
     while ($danhmuc = mysqli_fetch_array($query_pro)) {
         $i++;
+        $tinhtrang = $danhmuc['tinhtrang'];
+        $thanhtoan = $danhmuc['thanhtoan'];
+        $b = "";
+        $c = "";
+        $tien = 0;
+        if($thanhtoan== 0){
+            $c = "Chưa thanh toán" ;
+        }else {
+            $c = "Đã thanh toán";
+        }
+        if ($tinhtrang == 0) {
+            $b = "Đang xử lí";
+        } else if ($tinhtrang == 1) {
+            $b = "Đã xử lí";
+        } else if ($tinhtrang == 2) {
+            $b = "Đang giao hàng";
+        } else {
+            $b = "Đã giao thành công";
+        }
     ?>
-        <tr>
-        <td> <?php echo $danhmuc['ma_hd'] ?> </td>
+       
+       <tr>
+                <td> <?php echo $danhmuc['ma_hd'] ?> </td>
                 <td> <?php echo $danhmuc['ho_ten'] ?> </td>
                 <td> <?php echo $danhmuc['sdt'] ?> </td>
                 <td> <?php echo $danhmuc['diachi'] ?> </td>
                 <td> <?php echo $danhmuc['tgdat'] ?> </td>
-                <td> <?php echo $danhmuc['tongtien'] ?> </td>
-                <td> <?php echo $danhmuc['tinhtrang'] ?> </td>
-                <td> <?php echo $danhmuc['thanhtoan'] ?> </td>
+                <td   > <?php echo number_format($danhmuc['tongtien']) ?> đ </td>
+                <td style="color: green;"> <?php echo $b?> </td>
+                <td style="color: red;"> <?php echo $c ?> </td>
+                <td> <a   href="./index.php?action=chitiet&query=them&id=<?=$danhmuc['ma_hd'] ?>">Xem chi tiết đơn hàng</a> </td>
+                <td>
+ 
+                    <a href=".././dao/donhang_xuli.php?mahd=<?=$danhmuc['ma_hd'] ?>"><img class="xoa" src="./img/clear.png" alt=""></a> |
+                    <a href="?action=hoadon&query=sua&mahd=<?=$danhmuc['ma_hd'] ?>"><img class="xoa" src="./img/pencil.png" alt=""></a>
+ 
+ 
+                </td>
 
-            <td>
-                <a href=".././dao/donhang_xuli.php?mahd= <?= $danhmuc['ma_hd'] ?>"><img class="xoa" src="./img/clear.png" alt=""></a> |
-                <a href="?action=hoadon&query=sua&mahd= <?= $danhmuc['ma_hd'] ?>"><img class="xoa" src="./img/pencil.png" alt=""></a>
 
-            </td>
-
-
-        </tr>
+            </tr>
     <?php
     }
     ?>

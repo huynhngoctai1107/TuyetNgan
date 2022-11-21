@@ -72,4 +72,7 @@
       include("quanly/giamgia/giamgia_lietke.php");
     }else if ($tam == 'binhluan' && $query == 'them') {
        include("quanly/binhluan/binhluan_lietke.php");
+      }else if($tam == "chitiet" && $query == 'them' ){
+        $a  = $_GET['id'];
+      include("quanly/donhang/chitiet.php");
     }

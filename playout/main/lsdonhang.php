@@ -27,11 +27,8 @@
              <tr>
                  <?php
                     include_once("./dao/pdo.php");
-                    $us =  $_SESSION['dangnhap'];
-                    $sql = "select * from khach_hang where email = '" . $us . "'";
-                    $query_seo = mysqli_query($mysqli, $sql);
-                    while ($row_seo = mysqli_fetch_array($query_seo)) {
-                        $a = $row_seo['ma_kh'];
+                    if($_GET['id'] ==""){
+                        $_GET['id'] = 0 ;
                     }
 
                     $query = "SELECT * FROM hang_hoa,chitiethoadon where  chitiethoadon.ma_hd = '$_GET[id]' and chitiethoadon.ma_hh = hang_hoa.ma_hh ";

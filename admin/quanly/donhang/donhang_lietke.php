@@ -34,7 +34,9 @@ $num_danhmuc = $count_danhmuc['num_danhmuc'];
         <th>Tổng tiền</th>
         <th>Tình trạng</th>
         <th>Thanh toán</th>
+        <th>Xem đơn hàng</th>
         <th>Quản lý</th>
+        
     </tr>
     <?php
 
@@ -68,10 +70,10 @@ $num_danhmuc = $count_danhmuc['num_danhmuc'];
                 <td> <?php echo $danhmuc['sdt'] ?> </td>
                 <td> <?php echo $danhmuc['diachi'] ?> </td>
                 <td> <?php echo $danhmuc['tgdat'] ?> </td>
-                <td> <?php echo $danhmuc['tongtien'] ?> </td>
-                <td> <?php echo $b?> </td>
-                <td> <?php echo $c ?> </td>
-
+                <td   > <?php echo number_format($danhmuc['tongtien']) ?> đ </td>
+                <td style="color: green;"> <?php echo $b?> </td>
+                <td style="color: red;"> <?php echo $c ?> </td>
+                <td> <a   href="./index.php?action=chitiet&query=them&id=<?=$danhmuc['ma_hd'] ?>">Xem chi tiết đơn hàng</a> </td>
                 <td>
  
                     <a href=".././dao/donhang_xuli.php?mahd=<?=$danhmuc['ma_hd'] ?>"><img class="xoa" src="./img/clear.png" alt=""></a> |
