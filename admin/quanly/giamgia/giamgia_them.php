@@ -47,6 +47,10 @@
             Số tiền giảm
             <input type="text" name="sotiengiam" id="" required>
         </p>
+        <p>
+            Điều kiện giảm giá
+            <input type="text" name="dieukien" id="" required>
+        </p>
     
         <p>
             <button type="submit" name="themgiamgia"> Cập Nhật</button>

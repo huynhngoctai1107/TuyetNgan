@@ -17,17 +17,23 @@ $query_pro = mysqli_query($mysqli, $sql_pro);
     <tr>
         <th>Mã giảm giám</th>
         <th>Số tiền giảm</th>
+        <th>Điều kiện</th>
         <th>Ngày tạo mã</th>
         <th>Quản lý</th>
     </tr>
     <?php
     $i = -1;
     while ($danhmuc = mysqli_fetch_array($query_pro)) {
-        $i++;
+        if ($danhmuc['dieukien'] < 1000) {
+            $dieukien = "Áp dụng cho tất cả hóa đơn";
+        } else {
+            $dieukien = $danhmuc['dieukien'];
+        }
     ?>
         <tr>
             <td style="color: red; font-size: 30px;font-family: 'Roboto', sans-serif; "> <?php echo $danhmuc['ma_giamgia'] ?> </td>
             <td> <?php echo number_format($danhmuc['giamgia']) ?> </td>
+            <td> <?php echo number_format($dieukien) ?> </td>
             <td> <?php echo $danhmuc['ngay'] ?> </td>
             <td>
 

@@ -20,13 +20,15 @@ $query_count = "SELECT COUNT(ma_gg) AS num_danhmuc FROM giam_gia";
 $count_danhmuc = $mysqli->query($query_count);
 $count_danhmuc = $count_danhmuc->fetch_assoc();
 $num_danhmuc = $count_danhmuc['num_danhmuc'];
- 
+
 ?>
 
 <table class="xuat">
     <tr>
         <th>Mã giảm giám</th>
         <th>Số tiền giảm</th>
+
+        <th>Điều kiện</th>
         <th>Ngày tạo mã</th>
         <th>Quản lý</th>
     </tr>
@@ -34,18 +36,23 @@ $num_danhmuc = $count_danhmuc['num_danhmuc'];
 
     if ($danhmucs->num_rows > 0) :
         while ($danhmuc = $danhmucs->fetch_assoc()) :
-
+            if ($danhmuc['dieukien'] < 1000) {
+                $dieukien = "Áp dụng cho tất cả hóa đơn";
+            } else {
+                $dieukien ="Đơn hàng phải lớn hơn ". number_format($danhmuc['dieukien']);
+            }
     ?>
             <tr>
                 <td style="color: red; font-size: 30px;font-family: 'Roboto', sans-serif; "> <?php echo $danhmuc['ma_giamgia'] ?> </td>
                 <td> <?php echo number_format($danhmuc['giamgia']) ?> </td>
+                <td> <?php echo $dieukien ?> </td>
                 <td> <?php echo $danhmuc['ngay'] ?> </td>
                 <td>
- 
-                    <a href=".././dao/giamgia_xuli.php?magg=<?=$danhmuc['ma_gg'] ?>"><img class="xoa" src="./img/clear.png" alt=""></a> |
-                    <a href="?action=giamgia&query=sua&magg=<?=$danhmuc['ma_gg'] ?>"><img class="xoa" src="./img/pencil.png" alt=""></a>
- 
- 
+
+                    <a href=".././dao/giamgia_xuli.php?magg=<?= $danhmuc['ma_gg'] ?>"><img class="xoa" src="./img/clear.png" alt=""></a> |
+                    <a href="?action=giamgia&query=sua&magg=<?= $danhmuc['ma_gg'] ?>"><img class="xoa" src="./img/pencil.png" alt=""></a>
+
+
                 </td>
 
 
@@ -66,7 +73,7 @@ $num_danhmuc = $count_danhmuc['num_danhmuc'];
     for ($i = 1; $i <= ceil((int) $num_danhmuc / $limit); $i++) :
 
     ?>
-                <li class="page-item"><a class="page-link" href="./index.php?action=giamgia&query=them&page=<?= $i ?>"><?= $i ?></a></li>
+        <li class="page-item"><a class="page-link" href="./index.php?action=giamgia&query=them&page=<?= $i ?>"><?= $i ?></a></li>
     <?php
     endfor;
     ?>

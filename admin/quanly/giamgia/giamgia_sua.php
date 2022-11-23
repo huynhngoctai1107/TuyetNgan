@@ -20,6 +20,8 @@ $query_sua_danhmucsp = mysqli_query($mysqli, $sql_sua_danhmucsp);
                 <br><br>
                 <h6>Số tiền được giảm</h6>
                 <input type="text" value="<?php echo $dong['giamgia'] ?>" name="sotiengiam">
+                <h6>Điều kiện giảm giá</h6>
+                <input type="text" value="<?php echo $dong['dieukien'] ?>" name="dieukien">
 
 
                 <button class="nut12" type="submit" name="suagiamgia" value="">Chỉnh Sửa</button>

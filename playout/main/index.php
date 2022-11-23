@@ -5,6 +5,8 @@
              <div class="features_items">
 
                  <?php
+                    include_once("./dao/pdo.php");
+
                     $sql_voucher = "SELECT * FROM giam_gia  ";
                     $query_voucher = mysqli_query($mysqli, $sql_voucher);
                     ?>
@@ -47,7 +49,6 @@
 
 
                      <?php
-                        include_once("./dao/pdo.php");
                         if (isset($_GET['id'])) {
                             $tam = $_GET['id'];
                         } else {
@@ -232,8 +233,8 @@
                                              <p> <?php
                                                     echo $row_sp['ten_hh'];
                                                     ?> (<?php
-                                                    echo $row_sp['so_luot_xem'];
-                                                    ?>)</p>
+                                                        echo $row_sp['so_luot_xem'];
+                                                        ?>)</p>
 
                                              <p style="color: red;">
                                                  <?php
