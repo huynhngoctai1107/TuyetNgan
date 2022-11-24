@@ -12,13 +12,20 @@
                     ?>
                  <?php
                     while ($voucher = mysqli_fetch_array($query_voucher)) {
+                        if ($voucher['dieukien'] < 1000) {
+                            $dieukien = "Áp dụng cho tất cả hóa đơn";
+                        } else {
+                            $dieukien ="Áp dụng cho đơn hàng lớn hơn ". number_format($voucher['dieukien']);
+                        }
                     ?>
-                     <div class="col-sm-3 " class="voucher" style="  background-color: #FE980F;margin-left: 70px; margin-top: 20px;margin-bottom: 20px; height: 150px; text-align: center;">
+                     <div class="col-sm-3 " class="voucher" style="  background-color: #FE980F;margin-left: 70px; margin-top: 20px;margin-bottom: 20px; height: 170px; text-align: center;">
                          <h2 style="color:white; margin-top: 15px !important;">Giảm <?php echo number_format($voucher['giamgia']) ?> đ</h2>
 
                          <div class="chua" style="background-color:white ;padding: 1px 0px ; margin-top: 10px !important;margin-bottom: 15px !important;">
                              <h3 style="color:red ;"><?php echo $voucher['ma_giamgia'] ?></h3>
                          </div>
+                         <p style="color: white;   margin-bottom: 200px;"><?php echo $dieukien ?></p>
+                    
 
                      </div>
 

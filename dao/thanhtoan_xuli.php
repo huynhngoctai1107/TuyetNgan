@@ -9,6 +9,7 @@ if (isset($_POST['thanhtoan'])) {
         $tongtien = $_POST['tongtien']  + 30000;
         $email = $_SESSION['dangnhap'];
         $sdt = $_POST['sdt'];
+        $id = $_POST['ma_gg'];
         $thanhtoan = $_POST['pttt'];
         $diachi = $_POST['diachi'];
         $tg = date("Y/m/d");
@@ -17,8 +18,8 @@ if (isset($_POST['thanhtoan'])) {
 
             $cart_data = json_decode($cookie_data, true);
 
-            $insert_hoadon = "INSERT INTO hoadon (sdt, diachi, tongtien, ma_kh,tgdat,thanhtoan)
-                VALUES ('" . $sdt . "', '" . $diachi . "', '" . $tongtien . "', '" . $ma_kh . "','" . $tg . "','" . $thanhtoan . "')";
+            $insert_hoadon = "INSERT INTO hoadon (sdt, diachi, tongtien, ma_kh,tgdat,thanhtoan,ma_gg)
+                VALUES ('" . $sdt . "', '" . $diachi . "', '" . $tongtien . "', '" . $ma_kh . "','" . $tg . "','" . $thanhtoan . "','" . $id . "')";
 
             mysqli_query($mysqli, $insert_hoadon);
             $ma_hd = mysqli_insert_id($mysqli);

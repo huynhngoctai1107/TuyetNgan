@@ -45,7 +45,7 @@ $num_danhmuc = $count_danhmuc['num_danhmuc'];
             <tr>
                 <td style="color: red; font-size: 30px;font-family: 'Roboto', sans-serif; "> <?php echo $danhmuc['ma_giamgia'] ?> </td>
                 <td> <?php echo number_format($danhmuc['giamgia']) ?> </td>
-                <td> <?php echo $dieukien ?> </td>
+                <td style="color: green;"> <?php echo $dieukien ?> </td>
                 <td> <?php echo $danhmuc['ngay'] ?> </td>
                 <td>
 

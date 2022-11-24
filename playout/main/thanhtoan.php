@@ -19,24 +19,18 @@
             <h5 class="text-center">CHI TIẾT HÓA ĐƠN</h5>
             <table class="table">
                 <thead>
-                    <tr >
+                    <tr>
                         <form action="" method="POST">
-                            <th colspan="6" >
+                            <th colspan="6">
 
                                 <input type="text" style="width:100% ; height: 40px; padding-left: 10px;" placeholder="Mã Voucher" name="voucher">
                             </th>
 
                             <th colspan="2"><button style="width:100%; background-color: #FE980F; color: white; border: none;height: 40px;" type="submit" name="apdung">Áp dụng</button></th>
                         </form>
-                        <?php
-                           $giamgia = 0;
-                           $thongbao ="";
-                          
-                        include('./dao/voucher_xuli.php');
-                         echo $thongbao  ;
-                        ?>
+
                     </tr>
-                    
+
                     <tr>
                         <th colspan="2">ID</th>
                         <th colspan="2">Tên</th>
@@ -59,6 +53,9 @@
                         $tongtien = $sp['don_gia'] * $sp['soluong'];
                         $tongtatca += $tongtien;
                     ?>
+
+
+                        <tr>
                         <tr>
                             <td scope="row" colspan="2"><?= $sp['ma_hh'] ?></td>
                             <td colspan="2"><?= $sp['ten_hh'] ?></td>
@@ -72,14 +69,21 @@
                     <?php
                     endforeach;
                     ?>
-                    <tr>
+                    <?php
+                    $giamgia = 0;
+                    $thongbao = "";
+                    $id = '' ;
+                    $tt = $tongtatca; 
+                    include('./dao/voucher_xuli.php');
+                    echo $thongbao;
+                    ?>
 
-                        <td colspan="3">Thanh toán</td>
+                    <td colspan="3">Thanh toán</td>
 
-                        <td colspan="2"></td>
-                        <td colspan="2">
-                            <b>+<?= number_format($tongtatca) ?> đ</b>
-                        </td colspan="2">
+                    <td colspan="2"></td>
+                    <td colspan="2">
+                        <b>+<?= number_format($tongtatca) ?> đ</b>
+                    </td colspan="2">
                     </tr>
                     <tr>
 
@@ -146,6 +150,7 @@
                 </div><br>
 
                 <input type="hidden" name="tongtien" id="" value="<?= $tongtatca - $giamgia ?>">
+                <input type="hidden" name="ma_gg" id="" value="<?= $id ?>">
 
                 <button class="btn btn-outline-dark" name="thanhtoan">ĐẶT HÀNG</button>
             </form>
