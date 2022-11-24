@@ -34,8 +34,8 @@
                     <tr>
                         <th colspan="2">ID</th>
                         <th colspan="2">Tên</th>
-                        <th colspan="2">Giá</th>
-                        <th colspan="2">Số lượng</th>
+                        
+                        <th colspan="2">Số lượng</th><th colspan="2">Giá</th>
                     </tr>
                 </thead>
                 <tbody>
