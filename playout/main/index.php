@@ -15,7 +15,7 @@
                         if ($voucher['dieukien'] < 1000) {
                             $dieukien = "Áp dụng cho tất cả hóa đơn";
                         } else {
-                            $dieukien ="Áp dụng cho đơn hàng lớn hơn ". number_format($voucher['dieukien']);
+                            $dieukien = "Áp dụng cho đơn hàng lớn hơn " . number_format($voucher['dieukien']);
                         }
                     ?>
                      <div class="col-sm-3 " class="voucher" style="  background-color: #FE980F;margin-left: 70px; margin-top: 20px;margin-bottom: 20px; height: 170px; text-align: center;">
@@ -25,7 +25,7 @@
                              <h3 style="color:red ;"><?php echo $voucher['ma_giamgia'] ?></h3>
                          </div>
                          <p style="color: white;   margin-bottom: 200px;"><?php echo $dieukien ?></p>
-                    
+
 
                      </div>
 
