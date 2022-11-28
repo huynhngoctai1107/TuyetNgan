@@ -27,9 +27,9 @@
         background-color: #EEEEEE;
         height: auto;
         margin: 15px 0px;
-        padding: 10px ;
+        padding: 10px;
         width: 100%;
-      
+
     }
 
     #binhluan input {
@@ -143,7 +143,7 @@ mysqli_query($mysqli, $sql_update_sanpham);
 ?>
 
 
-<div class="noidung" style="height: auto; width:65% ; margin-left: 17.5%; margin-bottom: 150px;">
+<div class="container" style="height: auto; margin-bottom: 50px;">
     <h1 style="margin: 30px 0px ;">Thông tin sản phẩm</h1>
     <?php
     $mysqli1 = new mysqli("localhost", "root", "", "du_an_mau");
@@ -154,6 +154,8 @@ mysqli_query($mysqli, $sql_update_sanpham);
 
     <?php
     while ($row_sp = mysqli_fetch_array($query_sp)) {
+        $maloai = $row_sp['ma_loai'];
+        $mahh = $row_sp['ma_hh'];
     ?>
 
         <form action="./dao/giohang_xuli.php?id=<?php echo $row_sp['ma_hh'] ?>" style="width:100% ; height: auto; display: flex; justify-content: space-between; " method="POST">
@@ -172,7 +174,7 @@ mysqli_query($mysqli, $sql_update_sanpham);
                 <br><br>
                 <input type="hidden" value="<?php echo $row_sp['ma_hh'] ?>" name="ma_hh">
 
-                 <button type="submit" style="margin-left:25% ; width:50% ; height: 40px;" name="themgiohang" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
+                <button type="submit" style="margin-left:25% ; width:50% ; height: 40px;" name="themgiohang" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
             </div>
 
 
@@ -183,15 +185,14 @@ mysqli_query($mysqli, $sql_update_sanpham);
             <?php
             if (!isset($_SESSION['dangnhap'])) {
                 echo "<h4> $binhluan <a href='$dangnhap'> Đăng nhập tại đây </a></h4> ";
-               
             } else {
                 echo "<h4> $binhluan </h4>";
                 include("playout/main/binhluan.php");
             }
             ?>
         </div>
-      
-      
+
+
 
     <?php }
     ?>
@@ -203,7 +204,7 @@ mysqli_query($mysqli, $sql_update_sanpham);
 
         <h1 class="binhluan12" style="width: 70%;   font-size: 50px;font-weight: 600; margin-top: 130px; margin-bottom: 60px;">Các Lượt Bình Luận</h1>
         <?php
-         $sql_bl = "SELECT * FROM binh_luan,hang_hoa,khach_hang    
+        $sql_bl = "SELECT * FROM binh_luan,hang_hoa,khach_hang    
                 WHERE  binh_luan.ma_hh = hang_hoa.ma_hh and khach_hang.ma_kh = binh_luan.ma_kh AND  binh_luan.ma_hh = '$_GET[id]'
                 ORDER BY binh_luan.ma_bl DESC";
         $query_bl = mysqli_query($mysqli, $sql_bl);
@@ -231,4 +232,50 @@ mysqli_query($mysqli, $sql_update_sanpham);
 
 
 
+</div>
+
+<?php
+
+
+$sql_seo = "SELECT * FROM hang_hoa where  hang_hoa.ma_loai = '" . $maloai . "' and ma_hh != '" . $mahh . "'  ORDER BY  ma_hh ASC  ";
+$query_seo = mysqli_query($mysqli, $sql_seo);
+
+?>
+<div class="container" style=" margin-bottom: 150px;">
+    <h2 class="title text-center">Sản phẩm cùng loại
+        <div id="recommended-item-carousel" class="carousel slide">
+            <div class="carousel-inner">
+
+                <?php
+                while ($row_seo = mysqli_fetch_array($query_seo)) {
+                ?> <form class="col-sm-4" action="dao/giohang_xuli.php?id=<?php echo $row_seo['ma_hh'] ?>" method="post" style="float: left !important;">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+
+
+                                    <a href="./chitiet.php?id=<?php echo $row_seo['ma_hh'] ?>">
+
+                                        <img src="./images/<?php echo $row_seo['hinh'] ?>" width="100%" height="200" alt="" />
+                                        <h1 style="color: #696763; font: 25px;"><?php echo $row_seo['ten_hh'] ?> </h1>
+
+                                        <h2><?php echo number_format($row_seo['don_gia']) ?> <sup>đ</sup></h2>
+                                        <p style="text-align:center  !important;">Tiệm bánh Tuyết Ngân
+                                        </p>
+                                        <input type="hidden" value="<?php echo $row_seo['ma_hh'] ?>">
+                                    </a>
+                                    <button type="submit" name="themgiohang" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                <?php
+                } ?>
+
+
+            </div>
+
+        </div>
 </div>
