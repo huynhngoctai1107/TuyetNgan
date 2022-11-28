@@ -109,7 +109,7 @@
                     <div class="card ">
                         <div class="card-header p-3 pt-2 bg-transparent">
                             <div class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
-                                 
+                            <i class="material-icons opacity-10">account_circle</i>
                             </div>
                             <div class="text-end pt-1">
                                 <p class="text-sm mb-0 text-capitalize ">Tổng Số Người Dùng</p>
