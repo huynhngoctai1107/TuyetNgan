@@ -242,7 +242,8 @@ $query_seo = mysqli_query($mysqli, $sql_seo);
 
 ?>
 <div class="container" style=" margin-bottom: 150px;">
-    <h2 class="title text-center">Sản phẩm cùng loại
+    <h2 class="title text-center">Sản phẩm cùng loại</h2>
+    <br>
         <div id="recommended-item-carousel" class="carousel slide">
             <div class="carousel-inner">
 
