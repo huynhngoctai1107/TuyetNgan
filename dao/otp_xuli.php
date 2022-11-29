@@ -33,21 +33,20 @@ if (isset($_POST['guiotp'])) {
     }
 } else if (isset($_POST['otp1'])) {
     $otp = $_POST['otp'];
-    $email1 = $_POST['email'];
-    $i = 0;
+     $i = 0;
     $sql_otp = "SELECT * FROM otp where ma = '" . $otp . "'  ";
     $query_otp = mysqli_query($mysqli, $sql_otp);
 
     while ($row_otp = mysqli_fetch_array($query_otp)) {
         $i++;
     }
-    $email = $email1;
+   
     if ($i != 0) {
-
+        $email = $_POST['email1'];
         $l = "playout/main/dangky/dangky.php";
     } else {
-
-        $thongbao = "Nhập mã OTP không chính xác !";
+        $email = $_POST['email1'];
+        $thongbao = "Nhập mã OTP không chính xác, Vui lòng nhập lại email !";
         $l = "playout/main/dangky/otp.php";
     }
 }

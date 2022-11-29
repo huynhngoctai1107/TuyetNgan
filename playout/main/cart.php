@@ -1,11 +1,11 @@
- <div class="chua" style="margin: 200px auto; width: 70%;">
- <div class="breadcrumbs">
- 			<ol class="breadcrumb">
- 				<li><a href="#">Home</a></li>
- 				<li class="active">Giỏ Hàng</li>
- 			</ol>
- 		</div>
- 	<table class="table">
+ <div class="container" style="margin: 200px auto; width: 70%;">
+ 	<div class="breadcrumbs">
+ 		<ol class="breadcrumb">
+ 			<li><a href="#">Home</a></li>
+ 			<li class="active">Giỏ Hàng</li>
+ 		</ol>
+ 	</div>
+ 	<table class="table" > 
  		<thead>
  			<tr style="background-color: #FE980F; color:white ;">
  				<th>ID</th>
@@ -20,7 +20,7 @@
  		<tbody>
 
  			<?php
-            	include_once("./dao/pdo.php");
+				include_once("./dao/pdo.php");
 
 				$cookie_data = $_COOKIE['cart'];
 				$cart_data = json_decode($cookie_data, true);
@@ -33,9 +33,9 @@
 				?>
  				<tr style="background-color: white;">
  					<td scope="row"><?= $sp['ma_hh'] ?></td>
-					 <td><?= $sp['ten_hh'] ?></td>
+ 					<td><?= $sp['ten_hh'] ?></td>
  					<td><img src="./images/<?= $sp['hinh'] ?>" width="100" alt=""></td>
- 					
+
  					<td> <?= number_format($sp['don_gia']) ?> đ</td>
  					<td width="200px">
  						<!-- cập nhật số lượng sản phẩm  -->
@@ -66,7 +66,7 @@
 				?>
 
  			<tr style="background-color: #FE980F ; color: white;">
-				<td></td>
+ 				<td></td>
  				<td colspan="4">Tổng tiền tất cả</td>
  				<td>
  					<b><?= number_format($tongtatca) ?> đ</b>
@@ -74,13 +74,13 @@
  				<td></td>
  			</tr>
  			<tr style="background-color: whitesmoke;">
- 				<td colspan="5" >
+ 				<td colspan="5">
  					<a href="./thanhtoan.php" class="btn btn-outline-dark">Thanh toán</a>
  				</td>
-				<td></td>
+ 				<td></td>
  				<td class="text-right">
  					<!-- xóa giỏ hàng  -->
- 				 
+
  				</td>
  			</tr>
 
@@ -91,7 +91,7 @@
  </div>
 
 
- </div>
+
  <!-- Optional JavaScript -->
  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -101,26 +101,3 @@
 
  </html>
  <?php ob_end_flush(); ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
