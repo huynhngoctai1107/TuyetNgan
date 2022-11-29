@@ -12,7 +12,7 @@ if (isset($_POST['gui'])) {
    
     $sql_themnguoidung = "INSERT INTO khach_hang(ho_ten,mat_khau,email,hinh) VALUES('".$nguoidangky."','".$matkhau."','".$email."','".$hinh."')";
     mysqli_query($mysqli, $sql_themnguoidung);
-    header('Location: ./dangky.php');
+    header('Location: ../login.php');
 
 
 } elseif (isset($_POST['sua'])) {

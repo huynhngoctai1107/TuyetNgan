@@ -1,4 +1,11 @@
  <section>
+ <style>
+     @media only screen and (max-width: 420px) {
+         .voucher {
+             margin-left: 0px !important;
+         }
+     }
+ </style>
      <div class="container">
          <div class="row" style="padding: 20px ;">
              <h2 class="title text-center">Voucher giảm giá</h2>
@@ -18,7 +25,7 @@
                             $dieukien = "Áp dụng cho đơn hàng lớn hơn " . number_format($voucher['dieukien']);
                         }
                     ?>
-                     <div class="col-sm-3 " class="voucher" style="  background-color: #FE980F;margin-left: 70px; margin-top: 20px;margin-bottom: 20px; height: 170px; text-align: center;">
+                     <div class="col-sm-3 " class="voucher" style=" background-color: #FE980F;margin-left: 70px; margin-top: 20px;margin-bottom: 20px; height: 170px; text-align: center;">
                          <h2 style="color:white; margin-top: 15px !important;">Giảm <?php echo number_format($voucher['giamgia']) ?> đ</h2>
 
                          <div class="chua" style="background-color:white ;padding: 1px 0px ; margin-top: 10px !important;margin-bottom: 15px !important;">

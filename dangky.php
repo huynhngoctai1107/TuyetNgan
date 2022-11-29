@@ -1,7 +1,10 @@
 <?php
-    session_start();
+include("dao/pdo.php");
+$thongbao = '';
+$email = '';
+$l = "playout/main/dangky/guiemail.php";
+include("dao/otp_xuli.php");
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +37,7 @@
 <body>
 
     <?php
-    include("dao/pdo.php");
+
     include("./playout/header/header.php");
 
     ?>
@@ -69,52 +72,13 @@
     <div class="limiter">
         <div class="container-login100" style="background-image: url('playout/main/images/bg-01.jpg');">
             <div class="wrap-login100">
-                <form action="./admin/quanly/nguoidung/nguoidung_xuli.php" method="POST">
+
+                <h3 style="color: white; text-align: center;"><?php echo $thongbao ?></h3>
+                <?php
+                 include("$l");
 
 
-                    <span class="login100-form-title p-b-34 p-t-27">
-                        Đăng ký
-                    </span>
-
-                    <div class="wrap-input100 validate-input" data-validate="Full Name">
-                        <input class="input100" type="text" name="ho_ten" required placeholder="Họ và tên">
-                        <span class="focus-input100" data-placeholder="&#xf207;"></span>
-                    </div>
-
-                    <div class="wrap-input100 validate-input" data-validate="Email">
-                        <input class="input100" type="email" name="email" required placeholder="Email">
-                        <span class="focus-input100" data-placeholder="&#xf207;"></span>
-                    </div>
-                    <div class="wrap-input100 validate-input" data-validate="Hình">
-                        <input class="input100" type="file" name="hinh" required placeholder="Hình Ảnh">
-                        <span class="focus-input100" data-placeholder="&#xf207;"></span>
-                    </div>
-
-
-
-                    <div class="wrap-input100 validate-input" data-validate="Enter password">
-                        <input class="input100" type="password" name="mat_khau" required placeholder="Mật khẩu">
-                        <span class="focus-input100" data-placeholder="&#xf191;"></span>
-                    </div>
-
-
-                    <div class="contact100-form-checkbox">
-                        <input class="input-checkbox100" id="ckb1" type="checkbox" required=" I Agree to terms of user ">
-                        <label class="label-checkbox100" for="ckb1">
-                            Tôi đồng ý <b>với các điều khoản của người dùng</b>
-                        </label>
-                    </div>
-
-                    <div class="container-login100-form-btn">
-                        <button type="submit" class="send_bt" name="gui">Đăng ký</button>
-                    </div>
-
-                    <div class="text-center p-t-90">
-                        <a class="txt1" href="../Eshopper/login.php">
-                            -> Đăng nhập
-                        </a>
-                    </div>
-                </form>
+                ?>
             </div>
         </div>
     </div>
@@ -140,8 +104,8 @@
     <script src="playout/main/vendor/main.js"></script>
 
     <?php
- 
- 
+
+
     require("./playout/footer/footer.php");
     ?>
 
