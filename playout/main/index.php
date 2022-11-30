@@ -74,8 +74,8 @@
                             $query_sanpham = mysqli_query($mysqli, $sql_sanpham);
                         } else {
 
-                            $sql_sanpham = "SELECT * FROM hang_hoa,loai 
-                           WHERE  hang_hoa.ma_loai= loai.ma_loai AND hang_hoa.ma_loai = '$_GET[id]'
+                            $sql_sanpham = "SELECT * FROM hang_hoa 
+                           WHERE hang_hoa.ma_loai = '$_GET[id]'
                          ORDER BY hang_hoa.ma_hh ASC";
                             $query_sanpham = mysqli_query($mysqli, $sql_sanpham);
                         }
