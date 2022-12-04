@@ -27,8 +27,8 @@ $query_sua_danhmucsp = mysqli_query($mysqli, $sql_sua_danhmucsp);
 
                <option value="0">Đang xử lí</option>
                <option value="1">Đã xử lí</option>
-               <option value="1">Đang giao hang</option>
-               <option value="1">Đã giao thành công</option>
+               <option value="2">Đang giao hang</option>
+               <option value="3">Đã giao thành công</option>
             </select>
 
 
