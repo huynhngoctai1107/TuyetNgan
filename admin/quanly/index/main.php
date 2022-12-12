@@ -37,7 +37,7 @@
                                 <p class="text-sm mb-0 text-capitalize">Tổng loại hàng</p>
                                 <h4 class="mb-0">
                                     <?php include(".././dao/pdo.php");
-                                    $sql = "select count(ma_loai) as sum from loai"; 
+                                    $sql = "select count(ma_loai) as sum from loai";
                                     $result = mysqli_query($mysqli, $sql);
                                     $data = mysqli_fetch_assoc($result);
                                     echo $data['sum'];
@@ -138,14 +138,14 @@
                                 <i class="material-icons opacity-10"> attach_money</i>
                             </div>
                             <div class="text-end pt-1">
-                                <p class="text-sm mb-0 text-capitalize">Tổng dòng tiền</p>
+                                <p class="text-sm mb-0 text-capitalize">Tổng danh thu</p>
                                 <h4 class="mb-0">
                                     <?php include(".././dao/pdo.php");
                                     $sql = "select sum(tongtien) as sum from hoadon where tinhtrang=3   ";
                                     $result = mysqli_query($mysqli, $sql);
                                     $data = mysqli_fetch_assoc($result);
-                                   
-                                    echo number_format($data['sum']) ." đ";
+
+                                    echo number_format($data['sum']) . " đ";
                                     ?>
                                 </h4>
                             </div>
@@ -179,7 +179,7 @@
 
                 </div>
                 <div class="col-lg-5 col-sm-5 mt-sm-0 mt-4">
-                    
+
 
                     <div class="card ">
                         <div class="card-header p-3 pt-2 bg-transparent">
@@ -190,10 +190,10 @@
                                 <p class="text-sm mb-0 text-capitalize ">Tổng Số Voucher</p>
                                 <h4 class="mb-0 ">
                                     <?php include(".././dao/pdo.php");
-                                   $sql = "select count(ma_gg) as sum from giam_gia";
-                                   $result = mysqli_query($mysqli, $sql);
-                                   $data = mysqli_fetch_assoc($result);
-                                   echo $data['sum'];
+                                    $sql = "select count(ma_gg) as sum from giam_gia";
+                                    $result = mysqli_query($mysqli, $sql);
+                                    $data = mysqli_fetch_assoc($result);
+                                    echo $data['sum'];
                                     ?></h4>
                             </div>
                         </div>
@@ -214,12 +214,29 @@
 
 
 </div>
-<div class="container" style="display: flex; justify-content: space-evenly;" >
-    <div   style="width:40% ;">
-    <h4>Thống kê sản phẩm</h4> <canvas id="myChart1"></canvas></div>
-    <div    style="width:40% ;"><h4>Thống kê đơn hàng</h4>  <canvas id="myChart2"></canvas></div>
-
+<div class="container" style="margin-bottom: 100px;">
+    <div class="col" style="display: flex; justify-content: space-evenly;">
+        <div style="width:40% ;">
+            <h4>Thống kê sản phẩm</h4> <canvas id="myChart1"></canvas>
+        </div>
+        <div style="width:40% ;">
+            <h4>Thống kê đơn hàng</h4> <canvas id="myChart2"></canvas>
+        </div>
+    </div>
+    <br>
+    <div class="col" style="display: flex; justify-content: space-between;">
+    <div style="width:30% ;">
+        <h3>Thống kê danh thu theo năm</h3> <canvas id="myChart3"></canvas>
+    </div>
+     <div style="width:30% ;">
+        <h3>Thống kê danh thu theo tháng</h3> <canvas id="myChart4"></canvas>
+    </div>
+    <div style="width:30% ;">
+        <h3>Thống kê danh thu theo ngày</h3> <canvas id="myChart5"></canvas>
+    </div>
+    </div>
+    
 </div>
-<?php  
+<?php
 include_once('../admin/thongke/thongke.php');
 ?>
