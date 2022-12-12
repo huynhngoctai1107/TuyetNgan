@@ -35,6 +35,10 @@
                         Thanh toán
                     </th>
 
+
+                    <th>
+                    </th>
+
                     <th>
 
                     </th>
@@ -59,6 +63,7 @@
             $tinhtrang = $hoadon['tinhtrang'];
             $thanhtoan = $hoadon['thanhtoan'];
             $voucher = $hoadon['ma_gg'];
+            $huydon = "";
             $b = "";
             $c = "";
             $tien = 0;
@@ -69,12 +74,16 @@
                 $c = "Đã thanh toán";
             }
             if ($tinhtrang == 0) {
+                $huydon = "Hủy đơn hàng";
                 $b = "Đang xử lí";
             } else if ($tinhtrang == 1) {
+                $huydon = "Hủy đơn hàng";
                 $b = "Đã xử lí";
             } else if ($tinhtrang == 2) {
+                $huydon = "";
                 $b = "Đang giao hàng";
             } else {
+                $huydon = "";
                 $b = "Đã giao thành công";
             }
             if ($voucher == '') {
@@ -94,6 +103,14 @@
             <td><?php echo $d ?></td>
             <td style="color: green;"><?php echo $b ?></td>
             <td style="color: red;"><?php echo $c ?></td>
+            <td>
+                <form action="./dao/donhang_xuli.php?id=<?php echo $hoadon['ma_hd'] ?>" method="post">
+                    <button class="huy" style="border: none;" name="huydon" type="submit"><?php echo $huydon ?></button>
+
+
+
+                </form>
+            </td>
             <td><a href="./lsdonhang.php?id=<?php echo $hoadon['ma_hd'] ?>">Xem chi tiết đơn hàng</a> </td>
 
 
@@ -116,6 +133,16 @@
     th {
         background-color: #FE980F !important;
         color: white;
+        text-align: center;
+    }
+
+    .huy:hover {
+        background-color: #FE980F;
+        color: white;
+    }
+
+    td {
+        text-align: center;
     }
 </style>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

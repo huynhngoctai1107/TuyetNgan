@@ -214,3 +214,12 @@
 
 
 </div>
+<div class="container" style="display: flex; justify-content: space-evenly;" >
+    <div   style="width:40% ;">
+    <h4>Thống kê sản phẩm</h4> <canvas id="myChart1"></canvas></div>
+    <div    style="width:40% ;"><h4>Thống kê đơn hàng</h4>  <canvas id="myChart2"></canvas></div>
+
+</div>
+<?php  
+include_once('../admin/thongke/thongke.php');
+?>

@@ -14,7 +14,7 @@ if (isset($_GET['page'])) {
 $start_from = ($page - 1) * $limit;
 
 // $query = "SELECT * FROM users";
-$query = "SELECT * FROM hang_hoa,loai where loai.ma_loai=hang_hoa.ma_loai ORDER BY hang_hoa.ma_hh ASC LIMIT $start_from, $limit";
+$query = "SELECT * FROM hang_hoa,loai where loai.ma_loai=hang_hoa.ma_loai ORDER BY hang_hoa.ma_hh DESC LIMIT $start_from, $limit";
 $danhmucs = $mysqli->query($query); // liên quan đến dòng 33
 $query_count = "SELECT COUNT(ma_hh) AS num_danhmuc FROM hang_hoa";
 $count_danhmuc = $mysqli->query($query_count);
