@@ -14,9 +14,7 @@ if (isset($_POST['thanhtoan'])) {
         $tg = date("Y/m/d");
         if (isset($_COOKIE['cart'])) {
             $cookie_data = $_COOKIE['cart'];
-
             $cart_data = json_decode($cookie_data, true);
-
             $insert_hoadon = "INSERT INTO hoadon (sdt, diachi, tongtien, ma_kh,tgdat,thanhtoan,ma_gg)
                 VALUES ('" . $sdt . "', '" . $diachi . "', '" . $tongtien . "', '" . $ma_kh . "','" . $tg . "','" . $thanhtoan . "','" . $id . "')";
 

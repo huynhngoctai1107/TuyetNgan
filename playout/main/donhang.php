@@ -86,7 +86,7 @@
                 $huydon = "";
                 $b = "Đã giao thành công";
             }
-            if ($voucher == '') {
+            if ($voucher == 0) {
                 $d = "Chưa sử dụng mã giảm giá";
             } else {
                 $d = "Đã sử dụng mã giảm giá";
