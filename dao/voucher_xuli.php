@@ -15,16 +15,19 @@ if (isset($_POST['apdung'])) {
     if ($c != 0) {
         if ($tt >= $dieukien ) {
             $thongbao = "* Áp dụng mã thành công !";
-            $id  = $id;
             $giamgia = $b;
         } else {
             $giamgia = 0;
-            $id = '';
+            $id = "";
             $thongbao = "* Áp dụng mã không thành công, số tiền chưa đủ điều kiện !";
         }
     } else {
         $giamgia = 0;
-        $id = '';
+        $id = "";
         $thongbao = "* Áp dụng mã không thành công, sai mã giảm giá !";
     }
+}else {
+    $id = "";
+    $giamgia= 0 ;
 }
+?>

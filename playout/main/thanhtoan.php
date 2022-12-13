@@ -72,7 +72,7 @@
                     <?php
                     $giamgia = 0;
                     $thongbao = "";
-                    $id = '' ;
+                    $id = "" ;
                     $tt = $tongtatca; 
                     include('./dao/voucher_xuli.php');
                     echo $thongbao;

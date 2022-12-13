@@ -1,9 +1,8 @@
 <?php
 
 session_start();
-
+include("pdo.php");
 if (isset($_POST['thanhtoan'])) {
-    include("pdo.php");
     if (isset($_SESSION['dangnhap'])) {
         $ma_kh = $_POST['ma_kh'];
         $tongtien = $_POST['tongtien']  + 30000;
