@@ -15,9 +15,13 @@ if (isset($_POST['thanhtoan'])) {
         if (isset($_COOKIE['cart'])) {
             $cookie_data = $_COOKIE['cart'];
             $cart_data = json_decode($cookie_data, true);
-            $insert_hoadon = "INSERT INTO hoadon (sdt, diachi, tongtien, ma_kh,tgdat,thanhtoan,ma_gg)
-                VALUES ('" . $sdt . "', '" . $diachi . "', '" . $tongtien . "', '" . $ma_kh . "','" . $tg . "','" . $thanhtoan . "','" . $id . "')";
-
+            if ($id == "") {
+                $insert_hoadon = "INSERT INTO hoadon (sdt, diachi, tongtien, ma_kh,tgdat,thanhtoan )
+                VALUES ('" . $sdt . "', '" . $diachi . "', '" . $tongtien . "', '" . $ma_kh . "','" . $tg . "','" . $thanhtoan . "' )";
+            } else {
+                $insert_hoadon = "INSERT INTO hoadon (sdt, diachi, tongtien, ma_kh,tgdat,thanhtoan,ma_gg )
+                    VALUES ('" . $sdt . "', '" . $diachi . "', '" . $tongtien . "', '" . $ma_kh . "','" . $tg . "','" . $thanhtoan . "' ,'" . $id . "')";
+            }
             mysqli_query($mysqli, $insert_hoadon);
             $ma_hd = mysqli_insert_id($mysqli);
             foreach ($cart_data as $key => $value) {
